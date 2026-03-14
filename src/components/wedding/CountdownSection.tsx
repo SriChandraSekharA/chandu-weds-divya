@@ -1,24 +1,18 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-
-interface TimeLeft {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
+import { useLanguage, t } from "./LanguageContext";
 
 const CountdownSection = () => {
+  const { lang } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const weddingDate = new Date("2026-08-16T07:32:00");
 
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
     const timer = setInterval(() => {
-      const now = new Date();
-      const diff = weddingDate.getTime() - now.getTime();
+      const diff = weddingDate.getTime() - Date.now();
       if (diff > 0) {
         setTimeLeft({
           days: Math.floor(diff / (1000 * 60 * 60 * 24)),
@@ -32,53 +26,34 @@ const CountdownSection = () => {
   }, []);
 
   const units = [
-    { label: "Days", value: timeLeft.days },
-    { label: "Hours", value: timeLeft.hours },
-    { label: "Minutes", value: timeLeft.minutes },
-    { label: "Seconds", value: timeLeft.seconds },
+    { label: t(lang, "countdown.days"), value: timeLeft.days },
+    { label: t(lang, "countdown.hours"), value: timeLeft.hours },
+    { label: t(lang, "countdown.minutes"), value: timeLeft.minutes },
+    { label: t(lang, "countdown.seconds"), value: timeLeft.seconds },
   ];
 
   return (
     <section ref={ref} className="relative py-20 px-4">
       <div className="absolute inset-0 bg-gradient-to-b from-maroon/20 via-maroon/10 to-transparent" />
-
       <div className="relative z-10 max-w-3xl mx-auto text-center">
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          className="font-script text-2xl text-gold-light mb-2"
-        >
-          Counting Down To
+        <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} className="font-script text-2xl text-gold-light mb-2">
+          {t(lang, "countdown.subtitle")}
         </motion.p>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.2 }}
-          className="font-display text-3xl md:text-4xl gradient-gold-text mb-12"
-        >
-          The Big Day
+        <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2 }}
+          className="font-display text-3xl md:text-4xl gradient-gold-text mb-12">
+          {t(lang, "countdown.title")}
         </motion.h2>
 
         <div className="flex justify-center gap-4 md:gap-8">
           {units.map((unit, i) => (
-            <motion.div
-              key={unit.label}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+            <motion.div key={unit.label} initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 + i * 0.1, duration: 0.6 }}
-              className="gold-border-ornate rounded-lg p-4 md:p-6 min-w-[70px] md:min-w-[100px] bg-card/50 backdrop-blur-sm"
-            >
-              <motion.span
-                key={unit.value}
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                className="block font-display text-2xl md:text-4xl gradient-gold-text"
-              >
+              className="gold-border-ornate rounded-lg p-4 md:p-6 min-w-[70px] md:min-w-[100px] bg-card/50 backdrop-blur-sm">
+              <motion.span key={unit.value} initial={{ scale: 1.2, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
+                className="block font-display text-2xl md:text-4xl gradient-gold-text">
                 {String(unit.value).padStart(2, "0")}
               </motion.span>
-              <span className="font-body text-xs md:text-sm tracking-[0.2em] uppercase text-gold/60 mt-1 block">
-                {unit.label}
-              </span>
+              <span className="font-body text-xs md:text-sm tracking-[0.2em] uppercase text-gold/60 mt-1 block">{unit.label}</span>
             </motion.div>
           ))}
         </div>
