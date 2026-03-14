@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import weddingBg from "@/assets/wedding-bg.jpg";
+import { useLanguage, t } from "./LanguageContext";
 
 interface EventCardProps {
   title: string;
@@ -16,24 +17,14 @@ const EventCard = ({ title, date, time, venue, description, index }: EventCardPr
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+    <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.15 }}
-      className="gold-border-ornate rounded-lg p-6 md:p-8 bg-card/80 backdrop-blur-sm"
-    >
+      className="gold-border-ornate rounded-lg p-6 md:p-8 bg-card/80 backdrop-blur-sm">
       <h3 className="font-display text-xl md:text-2xl gradient-gold-text mb-3">{title}</h3>
       <div className="space-y-2 font-body text-base">
-        <p className="text-gold-light flex items-center gap-2">
-          <span className="text-gold/60">📅</span> {date}
-        </p>
-        <p className="text-gold-light flex items-center gap-2">
-          <span className="text-gold/60">🕐</span> {time}
-        </p>
-        <p className="text-foreground/80 flex items-center gap-2">
-          <span className="text-gold/60">📍</span> {venue}
-        </p>
+        <p className="text-gold-light flex items-center gap-2"><span className="text-gold/60">📅</span> {date}</p>
+        <p className="text-gold-light flex items-center gap-2"><span className="text-gold/60">🕐</span> {time}</p>
+        <p className="text-foreground/80 flex items-center gap-2"><span className="text-gold/60">📍</span> {venue}</p>
         <p className="text-muted-foreground text-sm italic mt-3">{description}</p>
       </div>
     </motion.div>
@@ -41,58 +32,26 @@ const EventCard = ({ title, date, time, venue, description, index }: EventCardPr
 };
 
 const EventsSection = () => {
+  const { lang } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const events = [
-    {
-      title: "Pellikuthuru",
-      date: "Friday, 15th August 2026",
-      time: "9:00 AM - 12:00 PM",
-      venue: "Bride's Residence, Vijayawada",
-      description: "Traditional pre-wedding ceremony with haldi and mehendi for the bride",
-    },
-    {
-      title: "Sangeeth & Mehendi",
-      date: "Friday, 15th August 2026",
-      time: "6:00 PM - 10:00 PM",
-      venue: "Sri Venkateswara Function Hall, Vijayawada",
-      description: "An evening of music, dance, and celebrations with both families",
-    },
-    {
-      title: "Wedding Ceremony",
-      date: "Saturday, 16th August 2026",
-      time: "Muhurtam: 7:32 AM - 8:45 AM",
-      venue: "Sri Sai Kalyana Mandapam, Hyderabad",
-      description: "The sacred wedding ceremony performed with traditional Vedic rituals",
-    },
-    {
-      title: "Wedding Reception",
-      date: "Saturday, 16th August 2026",
-      time: "7:00 PM Onwards",
-      venue: "Sri Sai Kalyana Mandapam, Hyderabad",
-      description: "Grand reception dinner — your blessings and presence will make the occasion truly special",
-    },
+    { title: t(lang, "events.pellikuthuru"), date: t(lang, "events.date1"), time: t(lang, "events.time_pellikuthuru"), venue: t(lang, "events.venue_bride"), description: t(lang, "events.pellikuthuru_desc") },
+    { title: t(lang, "events.sangeeth"), date: t(lang, "events.date1"), time: t(lang, "events.time_sangeeth"), venue: t(lang, "events.venue_function"), description: t(lang, "events.sangeeth_desc") },
+    { title: t(lang, "events.wedding"), date: t(lang, "events.date2"), time: t(lang, "events.time_wedding"), venue: t(lang, "events.venue_mandapam"), description: t(lang, "events.wedding_desc") },
+    { title: t(lang, "events.reception"), date: t(lang, "events.date2"), time: t(lang, "events.time_reception"), venue: t(lang, "events.venue_mandapam"), description: t(lang, "events.reception_desc") },
   ];
 
   return (
     <section className="relative py-24 overflow-hidden">
-      {/* Parallax Background */}
-      <div
-        className="absolute inset-0 parallax-section opacity-15"
-        style={{ backgroundImage: `url(${weddingBg})` }}
-      />
+      <div className="absolute inset-0 parallax-section opacity-15" style={{ backgroundImage: `url(${weddingBg})` }} />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
 
       <div ref={ref} className="relative z-10 max-w-5xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <p className="font-script text-2xl text-gold-light mb-2">Celebrate With Us</p>
-          <h2 className="font-display text-3xl md:text-4xl gradient-gold-text mb-4">Wedding Events</h2>
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center mb-16">
+          <p className="font-script text-2xl text-gold-light mb-2">{t(lang, "events.subtitle")}</p>
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold-text mb-4">{t(lang, "events.title")}</h2>
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto" />
         </motion.div>
 

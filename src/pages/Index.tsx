@@ -6,19 +6,24 @@ import VenueSection from "@/components/wedding/VenueSection";
 import FooterSection from "@/components/wedding/FooterSection";
 import GopuramParallax from "@/components/wedding/GopuramParallax";
 import FixedGopurams from "@/components/wedding/FixedGopurams";
+import LanguageToggle from "@/components/wedding/LanguageToggle";
+import { LanguageProvider } from "@/components/wedding/LanguageContext";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
-      <FixedGopurams />
-      <HeroSection />
-      <CoupleSection />
-      <GopuramParallax />
-      <CountdownSection />
-      <EventsSection />
-      <VenueSection />
-      <FooterSection />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen bg-background overflow-x-hidden">
+        <LanguageToggle />
+        <FixedGopurams />
+        <HeroSection />
+        <CoupleSection />
+        <GopuramParallax />
+        <CountdownSection />
+        <EventsSection />
+        <VenueSection />
+        <FooterSection />
+      </div>
+    </LanguageProvider>
   );
 };
 
