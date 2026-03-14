@@ -1,0 +1,109 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import weddingBg from "@/assets/wedding-bg.jpg";
+
+interface EventCardProps {
+  title: string;
+  date: string;
+  time: string;
+  venue: string;
+  description: string;
+  index: number;
+}
+
+const EventCard = ({ title, date, time, venue, description, index }: EventCardProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, delay: index * 0.15 }}
+      className="gold-border-ornate rounded-lg p-6 md:p-8 bg-card/80 backdrop-blur-sm"
+    >
+      <h3 className="font-display text-xl md:text-2xl gradient-gold-text mb-3">{title}</h3>
+      <div className="space-y-2 font-body text-base">
+        <p className="text-gold-light flex items-center gap-2">
+          <span className="text-gold/60">📅</span> {date}
+        </p>
+        <p className="text-gold-light flex items-center gap-2">
+          <span className="text-gold/60">🕐</span> {time}
+        </p>
+        <p className="text-foreground/80 flex items-center gap-2">
+          <span className="text-gold/60">📍</span> {venue}
+        </p>
+        <p className="text-muted-foreground text-sm italic mt-3">{description}</p>
+      </div>
+    </motion.div>
+  );
+};
+
+const EventsSection = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const events = [
+    {
+      title: "Pellikuthuru",
+      date: "Friday, 15th August 2026",
+      time: "9:00 AM - 12:00 PM",
+      venue: "Bride's Residence, Vijayawada",
+      description: "Traditional pre-wedding ceremony with haldi and mehendi for the bride",
+    },
+    {
+      title: "Sangeeth & Mehendi",
+      date: "Friday, 15th August 2026",
+      time: "6:00 PM - 10:00 PM",
+      venue: "Sri Venkateswara Function Hall, Vijayawada",
+      description: "An evening of music, dance, and celebrations with both families",
+    },
+    {
+      title: "Wedding Ceremony",
+      date: "Saturday, 16th August 2026",
+      time: "Muhurtam: 7:32 AM - 8:45 AM",
+      venue: "Sri Sai Kalyana Mandapam, Hyderabad",
+      description: "The sacred wedding ceremony performed with traditional Vedic rituals",
+    },
+    {
+      title: "Wedding Reception",
+      date: "Saturday, 16th August 2026",
+      time: "7:00 PM Onwards",
+      venue: "Sri Sai Kalyana Mandapam, Hyderabad",
+      description: "Grand reception dinner — your blessings and presence will make the occasion truly special",
+    },
+  ];
+
+  return (
+    <section className="relative py-24 overflow-hidden">
+      {/* Parallax Background */}
+      <div
+        className="absolute inset-0 parallax-section opacity-15"
+        style={{ backgroundImage: `url(${weddingBg})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+
+      <div ref={ref} className="relative z-10 max-w-5xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <p className="font-script text-2xl text-gold-light mb-2">Celebrate With Us</p>
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold-text mb-4">Wedding Events</h2>
+          <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto" />
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {events.map((event, index) => (
+            <EventCard key={event.title} {...event} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default EventsSection;
