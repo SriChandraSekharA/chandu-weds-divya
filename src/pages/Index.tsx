@@ -1,4 +1,3 @@
-import { useState, useCallback } from "react";
 import HeroSection from "@/components/wedding/HeroSection";
 import CoupleSection from "@/components/wedding/CoupleSection";
 import CountdownSection from "@/components/wedding/CountdownSection";
@@ -8,41 +7,21 @@ import FooterSection from "@/components/wedding/FooterSection";
 import GopuramParallax from "@/components/wedding/GopuramParallax";
 import FixedGopurams from "@/components/wedding/FixedGopurams";
 import LanguageToggle from "@/components/wedding/LanguageToggle";
-import EnvelopeOpening from "@/components/wedding/EnvelopeOpening";
-import FloatingPetals from "@/components/wedding/FloatingPetals";
-import AnimatedDiyas from "@/components/wedding/AnimatedDiyas";
-import OrnateSection from "@/components/wedding/OrnateSection";
 import { LanguageProvider } from "@/components/wedding/LanguageContext";
 
 const Index = () => {
-  const [showInvitation, setShowInvitation] = useState(false);
-  const handleEnvelopeComplete = useCallback(() => setShowInvitation(true), []);
-
   return (
     <LanguageProvider>
-      {!showInvitation && <EnvelopeOpening onComplete={handleEnvelopeComplete} />}
-      <div className={`min-h-screen bg-background overflow-x-hidden ${!showInvitation ? "opacity-0" : "opacity-100"} transition-opacity duration-700`}>
+      <div className="min-h-screen bg-background overflow-x-hidden">
         <LanguageToggle />
         <FixedGopurams />
-        <FloatingPetals />
-        <AnimatedDiyas />
         <HeroSection />
-        <OrnateSection>
-          <CoupleSection />
-        </OrnateSection>
+        <CoupleSection />
         <GopuramParallax />
-        <OrnateSection>
-          <CountdownSection />
-        </OrnateSection>
-        <OrnateSection>
-          <EventsSection />
-        </OrnateSection>
-        <OrnateSection>
-          <VenueSection />
-        </OrnateSection>
-        <OrnateSection showBottomDivider>
-          <FooterSection />
-        </OrnateSection>
+        <CountdownSection />
+        <EventsSection />
+        <VenueSection />
+        <FooterSection />
       </div>
     </LanguageProvider>
   );
