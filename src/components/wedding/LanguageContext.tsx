@@ -92,6 +92,8 @@ export const t = (lang: Language, key: string): string => {
     "footer.invite": { en: "We joyfully invite you to share in our happiness", te: "మా ఆనందంలో పాలుపంచుకోమని మిమ్మల్ని ఆహ్వానిస్తున్నాము" },
     "footer.request": { en: "Your gracious presence and blessings are requested at the wedding ceremony of our beloved children.", te: "మా ప్రియమైన పిల్లల వివాహ వేడుకకు మీ శుభ ఉనికి మరియు ఆశీర్వాదాలు కోరుతున్నాము." },
     "footer.quote": { en: '"Two souls with but a single thought, two hearts that beat as one."', te: '"ఒకే ఆలోచనతో రెండు ఆత్మలు, ఒకటిగా కొట్టుకునే రెండు హృదయాలు."' },
+    "footer.calendar": { en: "Add to Calendar", te: "క్యాలెండర్‌కు జోడించండి" },
+    "footer.share": { en: "Share on WhatsApp", te: "WhatsApp లో పంచుకోండి" },
     "footer.with": { en: "With Love & Blessings", te: "ప్రేమ & ఆశీర్వాదాలతో" },
     "footer.families": { en: "Both Families", te: "ఇరు కుటుంబాలు" },
   };
