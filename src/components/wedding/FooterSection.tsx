@@ -9,6 +9,21 @@ const FooterSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
+  const handleAddToCalendar = () => {
+    const startDate = "20260816T073200";
+    const endDate = "20260816T084500";
+    const title = "Wedding of Rajesh & Priya";
+    const location = "Sri Sai Kalyana Mandapam, Road No. 12, Banjara Hills, Hyderabad";
+    const details = "Wedding ceremony - Muhurtam at 7:32 AM";
+    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
+    window.open(url, "_blank");
+  };
+
+  const handleWhatsAppShare = () => {
+    const message = "You're cordially invited to the wedding of Rajesh Kumar & Priya Sharma on 16th August 2026 at Sri Sai Kalyana Mandapam, Hyderabad. 🎊💍\n\nView invitation: " + window.location.href;
+    window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank");
+  };
+
   return (
     <section ref={ref} className="relative py-24 px-4 overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.03]">
@@ -31,17 +46,45 @@ const FooterSection = () => {
         </motion.p>
 
         <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ delay: 0.8, duration: 0.8 }}
-          className="font-body text-base text-muted-foreground italic">
+          className="font-body text-base text-muted-foreground italic mb-10">
           {t(lang, "footer.quote")}
         </motion.p>
 
-        <motion.div initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ delay: 1, duration: 1 }} className="mt-12">
+        {/* Action Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleAddToCalendar}
+            className="px-6 py-3 border border-gold/50 rounded-full font-body text-sm tracking-[0.15em] uppercase text-gold hover:bg-gold/10 transition-colors flex items-center gap-2"
+          >
+            <span>📅</span>
+            {t(lang, "footer.calendar")}
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleWhatsAppShare}
+            className="px-6 py-3 bg-[hsl(142,70%,35%)] hover:bg-[hsl(142,70%,30%)] rounded-full font-body text-sm tracking-[0.15em] uppercase text-cream transition-colors flex items-center gap-2"
+          >
+            <span>💬</span>
+            {t(lang, "footer.share")}
+          </motion.button>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ delay: 1.2, duration: 1 }} className="mt-8">
           <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-4" />
           <p className="font-body text-sm tracking-[0.3em] uppercase text-gold/40">{t(lang, "footer.with")}</p>
           <p className="font-body text-sm text-gold/30 mt-2">{t(lang, "footer.families")}</p>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0 }} animate={isInView ? { opacity: 0.5 } : {}} transition={{ delay: 1.2, duration: 1 }} className="mt-10">
+        <motion.div initial={{ opacity: 0 }} animate={isInView ? { opacity: 0.5 } : {}} transition={{ delay: 1.4, duration: 1 }} className="mt-10">
           <img src={dividerImg} alt="" className="w-full max-w-sm mx-auto h-10 object-contain rotate-180" />
         </motion.div>
       </div>
