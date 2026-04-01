@@ -15,6 +15,7 @@ const Index = () => {
     <LanguageProvider>
       <div className="min-h-screen bg-background overflow-x-hidden">
         <LanguageToggle />
+        <MusicToggle />
         <FixedGopurams />
         <HeroSection />
         <CoupleSection />
