@@ -20,27 +20,31 @@ const MusicToggle = () => {
       console.error("Audio error:", e);
     });
 
+    let started = false;
+    const startPlayback = () => {
+      if (started) return;
+      started = true;
+      audio.play().then(() => {
+        setPlaying(true);
+        setInitialized(true);
+      }).catch(() => { started = false; });
+    };
+
     // Try autoplay immediately
-    audio.play().then(() => {
-      setPlaying(true);
-      setInitialized(true);
-    }).catch(() => {
-      // Autoplay blocked — play on first user interaction
-      const playOnInteraction = () => {
-        audio.play().then(() => {
-          setPlaying(true);
-          setInitialized(true);
-        }).catch(() => {});
-        document.removeEventListener("click", playOnInteraction);
-        document.removeEventListener("touchstart", playOnInteraction);
-        document.removeEventListener("scroll", playOnInteraction);
-      };
-      document.addEventListener("click", playOnInteraction, { once: true });
-      document.addEventListener("touchstart", playOnInteraction, { once: true });
-      document.addEventListener("scroll", playOnInteraction, { once: true });
-    });
+    startPlayback();
+
+    // Also listen for ANY user interaction as fallback
+    const events = ["click", "touchstart", "scroll", "mousemove", "keydown"];
+    const handler = () => {
+      startPlayback();
+      if (started) {
+        events.forEach(e => document.removeEventListener(e, handler));
+      }
+    };
+    events.forEach(e => document.addEventListener(e, handler, { passive: true }));
 
     return () => {
+      events.forEach(e => document.removeEventListener(e, handler));
       audio.pause();
       audio.src = "";
     };
