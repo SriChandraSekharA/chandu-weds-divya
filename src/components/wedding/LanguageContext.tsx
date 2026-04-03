@@ -71,7 +71,7 @@ export const t = (lang: Language, key: string): string => {
     "venue.name": { en: "TSIIC MULTIPURPOSE FUNCTION HALL", te: "TSIIC మల్టీపర్పస్ ఫంక్షన్ హాల్" },
     "venue.line1": { en: "Rd Number 6, TSIIC Colony, Shapur Nagar", te: "రోడ్ నంబర్ 6, TSIIC కాలనీ, షాపూర్ నగర్" },
     "venue.line2": { en: "Hyderabad, Telangana", te: "హైదరాబాద్, తెలంగాణ" },
-    "venue.landmark": { en: "", te: "" },
+    "venue.landmark": { en: "\n", te: "\n" },
     "venue.maps": { en: "Open in Google Maps", te: "Google Maps లో చూడండి" },
     "venue.scan": { en: "Scan for Directions", te: "దిశల కోసం స్కాన్ చేయండి" },
     "venue.camera": { en: "Point your camera at the QR code", te: "QR కోడ్ వైపు మీ కెమెరా చూపండి" },
