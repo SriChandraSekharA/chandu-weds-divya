@@ -31,7 +31,7 @@ const VenueSection = () => {
             <div className="font-body text-lg space-y-2 text-foreground/80">
               <p>{t(lang, "venue.line1")}</p>
               <p>{t(lang, "venue.line2")}</p>
-              <p className="text-muted-foreground text-base mt-4">{t(lang, "venue.landmark")}</p>
+              <p className="text-muted-foreground text-base mt-4 whitespace-pre-line">{t(lang, "venue.landmark")}</p>
             </div>
             <motion.a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
               className="inline-block mt-6 px-8 py-3 border border-gold/50 rounded-full font-body text-sm tracking-[0.2em] uppercase text-gold hover:bg-gold/10 transition-colors">

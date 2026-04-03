@@ -29,7 +29,7 @@ const CoupleSection = () => {
             <p className="font-body text-lg text-gold-light/80 italic">{t(lang, "couple.son_of")}</p>
             <p className="font-body text-lg text-foreground">{t(lang, "couple.groom_father")}</p>
             <p className="font-body text-lg text-foreground">{t(lang, "couple.groom_mother")}</p>
-            <p className="font-body text-sm text-muted-foreground mt-2">{t(lang, "couple.groom_city")}</p>
+            <p className="font-body text-sm text-muted-foreground mt-2 whitespace-pre-line">{t(lang, "couple.groom_city")}</p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, scale: 0 }} animate={isInView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.6, delay: 0.5 }} className="relative">
@@ -45,7 +45,7 @@ const CoupleSection = () => {
             <p className="font-body text-lg text-gold-light/80 italic">{t(lang, "couple.daughter_of")}</p>
             <p className="font-body text-lg text-foreground">{t(lang, "couple.bride_father")}</p>
             <p className="font-body text-lg text-foreground">{t(lang, "couple.bride_mother")}</p>
-            <p className="font-body text-sm text-muted-foreground mt-2">{t(lang, "couple.bride_city")}</p>
+            <p className="font-body text-sm text-muted-foreground mt-2 whitespace-pre-line">{t(lang, "couple.bride_city")}</p>
           </motion.div>
         </div>
 
