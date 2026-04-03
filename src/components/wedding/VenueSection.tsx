@@ -10,8 +10,7 @@ const VenueSection = () => {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
-  const venueAddress = "Sri Sai Kalyana Mandapam, Road No. 12, Banjara Hills, Hyderabad, Telangana 500034";
-  const googleMapsUrl = `https://maps.google.com/?q=${encodeURIComponent(venueAddress)}`;
+  const googleMapsUrl = "https://maps.app.goo.gl/vArPKEkZTM3B9gpe6";
 
   return (
     <section ref={ref} className="relative py-24 px-4 overflow-hidden">
