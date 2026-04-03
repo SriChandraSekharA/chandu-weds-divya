@@ -42,8 +42,8 @@ export const t = (lang: Language, key: string): string => {
     "couple.groom_mother": { en: "Smt. Rama Devi", te: "శ్రీమతి రామ దేవి" },
     "couple.bride_father": { en: "Sri. Chandra Sekhar &", te: "శ్రీ చంద్ర శేఖర్ &" },
     "couple.bride_mother": { en: "Smt. Vijaya Lakshmi", te: "శ్రీమతి విజయ లక్ష్మి" },
-    "couple.groom_city": { en: "", te: "" },
-    "couple.bride_city": { en: "", te: "" },
+    "couple.groom_city": { en: "\n", te: "\n" },
+    "couple.bride_city": { en: "\n", te: "\n" },
 
     // Countdown
     "countdown.subtitle": { en: "Counting Down To", te: "శుభ ముహూర్తం వరకు" },
