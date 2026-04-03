@@ -63,7 +63,7 @@ export const t = (lang: Language, key: string): string => {
     "events.date_wedding": { en: "Wednesday, 29th April 2026", te: "బుధవారం, 29 ఏప్రిల్ 2026" },
     "events.time_muhurtham": { en: "11:13 PM", te: "రాత్రి 11:13" },
     "events.time_dinner": { en: "7:00 PM Onwards", te: "సాయంత్రం 7:00 నుండి" },
-    "events.venue_mandapam": { en: "TSIIC MULTIPURPOSE FUNCTION HALL, Hyderabad", te: "TSIIC మల్టీపర్పస్ ఫంక్షన్ హాల్, హైదరాబాద్" },
+    "events.venue_mandapam": { en: "\nTSIIC MULTIPURPOSE FUNCTION HALL, Hyderabad", te: "\nTSIIC మల్టీపర్పస్ ఫంక్షన్ హాల్, హైదరాబాద్" },
 
     // Venue
     "venue.subtitle": { en: "Find Your Way", te: "మార్గం కనుగొనండి" },
