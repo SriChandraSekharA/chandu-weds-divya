@@ -20,6 +20,26 @@ const MusicToggle = () => {
       console.error("Audio error:", e);
     });
 
+    // Try autoplay immediately
+    audio.play().then(() => {
+      setPlaying(true);
+      setInitialized(true);
+    }).catch(() => {
+      // Autoplay blocked — play on first user interaction
+      const playOnInteraction = () => {
+        audio.play().then(() => {
+          setPlaying(true);
+          setInitialized(true);
+        }).catch(() => {});
+        document.removeEventListener("click", playOnInteraction);
+        document.removeEventListener("touchstart", playOnInteraction);
+        document.removeEventListener("scroll", playOnInteraction);
+      };
+      document.addEventListener("click", playOnInteraction, { once: true });
+      document.addEventListener("touchstart", playOnInteraction, { once: true });
+      document.addEventListener("scroll", playOnInteraction, { once: true });
+    });
+
     return () => {
       audio.pause();
       audio.src = "";
