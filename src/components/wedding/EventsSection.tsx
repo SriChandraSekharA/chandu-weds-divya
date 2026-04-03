@@ -37,10 +37,8 @@ const EventsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const events = [
-    { title: t(lang, "events.pellikuthuru"), date: t(lang, "events.date1"), time: t(lang, "events.time_pellikuthuru"), venue: t(lang, "events.venue_bride"), description: t(lang, "events.pellikuthuru_desc") },
-    { title: t(lang, "events.sangeeth"), date: t(lang, "events.date1"), time: t(lang, "events.time_sangeeth"), venue: t(lang, "events.venue_function"), description: t(lang, "events.sangeeth_desc") },
-    { title: t(lang, "events.wedding"), date: t(lang, "events.date2"), time: t(lang, "events.time_wedding"), venue: t(lang, "events.venue_mandapam"), description: t(lang, "events.wedding_desc") },
-    { title: t(lang, "events.reception"), date: t(lang, "events.date2"), time: t(lang, "events.time_reception"), venue: t(lang, "events.venue_mandapam"), description: t(lang, "events.reception_desc") },
+    { title: t(lang, "events.muhurtham"), date: t(lang, "events.date_wedding"), time: t(lang, "events.time_muhurtham"), venue: t(lang, "events.venue_mandapam"), description: t(lang, "events.muhurtham_desc") },
+    { title: t(lang, "events.dinner"), date: t(lang, "events.date_wedding"), time: t(lang, "events.time_dinner"), venue: t(lang, "events.venue_mandapam"), description: t(lang, "events.dinner_desc") },
   ];
 
   return (
