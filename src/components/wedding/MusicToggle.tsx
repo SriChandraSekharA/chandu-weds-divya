@@ -91,7 +91,7 @@ const MusicToggle = () => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 2.5, duration: 0.5 }}
       onClick={togglePlay}
-      className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full border border-gold/40 bg-card/80 backdrop-blur-md flex items-center justify-center text-gold hover:bg-gold/10 transition-colors cursor-pointer"
+      className="fixed top-5 left-5 z-50 w-10 h-10 rounded-full border border-gold/40 bg-card/80 backdrop-blur-md flex items-center justify-center text-gold hover:bg-gold/10 transition-colors cursor-pointer"
       aria-label={playing ? "Mute music" : "Play music"}
     >
       {playing ? (
