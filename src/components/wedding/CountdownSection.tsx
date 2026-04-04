@@ -44,16 +44,16 @@ const CountdownSection = () => {
           {t(lang, "countdown.title")}
         </motion.h2>
 
-        <div className="flex justify-center gap-4 md:gap-8">
+        <div className="flex justify-center gap-3 md:gap-8">
           {units.map((unit, i) => (
             <motion.div key={unit.label} initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 + i * 0.1, duration: 0.6 }}
-              className="gold-border-ornate rounded-lg p-4 md:p-6 min-w-[70px] md:min-w-[100px] bg-card/50 backdrop-blur-sm">
+              className="gold-border-ornate rounded-lg p-3 md:p-6 min-w-[68px] md:min-w-[100px] bg-card/50 backdrop-blur-sm flex flex-col items-center justify-center text-center">
               <motion.span key={unit.value} initial={{ scale: 1.2, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
-                className="block font-display text-2xl md:text-4xl gradient-gold-text">
+                className="block font-display text-2xl md:text-4xl gradient-gold-text leading-none text-center w-full tabular-nums">
                 {String(unit.value).padStart(2, "0")}
               </motion.span>
-              <span className="font-body text-xs md:text-sm tracking-[0.2em] uppercase text-gold/60 mt-1 block">{unit.label}</span>
+              <span className="font-body text-[10px] md:text-sm tracking-[0.15em] md:tracking-[0.2em] uppercase text-gold/60 mt-2 block text-center w-full">{unit.label}</span>
             </motion.div>
           ))}
         </div>
