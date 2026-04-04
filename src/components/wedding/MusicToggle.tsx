@@ -8,43 +8,61 @@ const MusicToggle = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
   const [initialized, setInitialized] = useState(false);
+  const attemptingRef = useRef(false);
 
   useEffect(() => {
-    const audio = new Audio(MUSIC_URL);
+    const audio = new Audio();
     audio.loop = true;
     audio.volume = 0.3;
     audio.preload = "auto";
+    audio.setAttribute("playsinline", "true");
+    audio.src = MUSIC_URL;
     audioRef.current = audio;
 
     audio.addEventListener("error", (e) => {
       console.error("Audio error:", e);
     });
 
-    let started = false;
-    const startPlayback = () => {
-      if (started) return;
-      started = true;
-      audio.play().then(() => {
-        setPlaying(true);
-        setInitialized(true);
-      }).catch(() => { started = false; });
+    const tryPlay = () => {
+      if (attemptingRef.current || audio.paused === false) return;
+      attemptingRef.current = true;
+
+      // Use both play() and a silent unlock trick for Android
+      const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+      if (ctx.state === "suspended") {
+        ctx.resume().catch(() => {});
+      }
+
+      audio.play()
+        .then(() => {
+          setPlaying(true);
+          setInitialized(true);
+          removeListeners();
+        })
+        .catch(() => {
+          attemptingRef.current = false;
+        });
     };
+
+    const events = ["click", "touchstart", "touchend", "scroll", "keydown", "pointerdown", "pointerup"];
+    const handler = () => tryPlay();
+
+    const removeListeners = () => {
+      events.forEach(e => document.removeEventListener(e, handler));
+    };
+
+    events.forEach(e => document.addEventListener(e, handler, { passive: true, capture: true }));
 
     // Try autoplay immediately
-    startPlayback();
+    tryPlay();
 
-    // Also listen for ANY user interaction as fallback
-    const events = ["click", "touchstart", "scroll", "mousemove", "keydown"];
-    const handler = () => {
-      startPlayback();
-      if (started) {
-        events.forEach(e => document.removeEventListener(e, handler));
-      }
-    };
-    events.forEach(e => document.addEventListener(e, handler, { passive: true }));
+    // Retry a few times with delay for slow Android browsers
+    const retries = [500, 1500, 3000];
+    const timers = retries.map(ms => setTimeout(tryPlay, ms));
 
     return () => {
-      events.forEach(e => document.removeEventListener(e, handler));
+      removeListeners();
+      timers.forEach(clearTimeout);
       audio.pause();
       audio.src = "";
     };
