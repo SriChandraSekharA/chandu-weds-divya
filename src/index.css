@@ -6,52 +6,52 @@
 
 @layer base {
   :root {
-    --background: 30 20% 7%;
-    --foreground: 40 60% 90%;
+    --background: 265 35% 9%;
+    --foreground: 280 50% 92%;
 
-    --card: 30 25% 12%;
-    --card-foreground: 40 60% 90%;
+    --card: 265 30% 14%;
+    --card-foreground: 280 50% 92%;
 
-    --popover: 30 25% 12%;
-    --popover-foreground: 40 60% 90%;
+    --popover: 265 30% 14%;
+    --popover-foreground: 280 50% 92%;
 
-    --primary: 40 70% 50%;
-    --primary-foreground: 30 20% 7%;
+    --primary: 270 60% 70%;
+    --primary-foreground: 265 35% 9%;
 
-    --secondary: 350 60% 30%;
-    --secondary-foreground: 40 60% 95%;
+    --secondary: 280 40% 35%;
+    --secondary-foreground: 280 60% 95%;
 
-    --muted: 30 15% 18%;
-    --muted-foreground: 35 30% 60%;
+    --muted: 265 20% 20%;
+    --muted-foreground: 275 25% 70%;
 
-    --accent: 40 80% 55%;
-    --accent-foreground: 30 20% 7%;
+    --accent: 285 70% 75%;
+    --accent-foreground: 265 35% 9%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 40 40% 25%;
-    --input: 40 40% 25%;
-    --ring: 40 70% 50%;
+    --border: 275 35% 35%;
+    --input: 275 35% 35%;
+    --ring: 270 60% 70%;
 
     --radius: 0.5rem;
 
-    /* Wedding-specific tokens */
-    --gold: 40 70% 50%;
-    --gold-light: 40 60% 70%;
-    --gold-dark: 40 80% 35%;
-    --maroon: 350 60% 25%;
-    --maroon-light: 350 50% 35%;
-    --cream: 40 50% 92%;
-    --deep-red: 0 70% 35%;
+    /* Wedding-specific tokens (lavender palette, names retained) */
+    --gold: 275 65% 72%;
+    --gold-light: 280 70% 85%;
+    --gold-dark: 270 55% 55%;
+    --maroon: 270 45% 25%;
+    --maroon-light: 275 40% 38%;
+    --cream: 285 60% 95%;
+    --deep-red: 285 55% 45%;
 
     --font-display: 'Cinzel Decorative', serif;
     --font-script: 'Great Vibes', cursive;
     --font-body: 'Cormorant Garamond', serif;
 
-    --gradient-gold: linear-gradient(135deg, hsl(40 80% 45%), hsl(45 90% 65%), hsl(40 80% 45%));
-    --gradient-maroon: linear-gradient(180deg, hsl(350 60% 20%), hsl(350 60% 30%));
-    --shadow-gold: 0 0 30px hsl(40 70% 50% / 0.3);
+    --gradient-gold: linear-gradient(135deg, hsl(270 60% 65%), hsl(290 80% 85%), hsl(270 60% 65%));
+    --gradient-maroon: linear-gradient(180deg, hsl(270 45% 20%), hsl(275 45% 32%));
+    --shadow-gold: 0 0 30px hsl(280 70% 70% / 0.35);
     --shadow-deep: 0 20px 60px hsl(0 0% 0% / 0.5);
 
     --sidebar-background: 0 0% 98%;
