@@ -22,7 +22,7 @@ const EventCard = ({ title, date, time, venue, description, index }: EventCardPr
       className="gold-border-ornate rounded-lg p-6 md:p-8 bg-card/80 backdrop-blur-sm">
       <h3 className="font-display text-xl md:text-2xl gradient-gold-text mb-3">{title}</h3>
       <div className="space-y-2 font-body text-base">
-        <p className="text-gold-light flex items-center gap-2 text-lg md:text-xl"><span className="text-gold/60">📅</span> {date}</p>
+        <p className="text-gold-light flex items-center gap-2 text-lg md:text-xl whitespace-pre-line">{date}</p>
         <p className="text-gold-light flex items-center gap-2 text-lg md:text-xl font-semibold"><span className="text-gold/60">🕐</span> {time}</p>
         
         <p className="text-muted-foreground text-sm italic mt-3">{description}</p>
