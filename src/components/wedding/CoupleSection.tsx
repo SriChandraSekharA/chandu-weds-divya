@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import dividerImg from "@/assets/floral-divider.png";
 import { useLanguage, t } from "./LanguageContext";
 
 const CoupleSection = () => {
@@ -10,10 +9,11 @@ const CoupleSection = () => {
 
   return (
     <section ref={ref} className="relative py-24 px-4 overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] animate-spin-slow">
-          <img src={dividerImg} alt="" className="w-full opacity-30" />
-        </div>
+      {/* Soft layered gradient background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-maroon/30 via-background to-background" />
+        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-gold/10 blur-3xl" />
+        <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full bg-accent/10 blur-3xl" />
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
@@ -50,7 +50,7 @@ const CoupleSection = () => {
         </div>
 
         <motion.div initial={{ opacity: 0, scaleX: 0 }} animate={isInView ? { opacity: 1, scaleX: 1 } : {}} transition={{ delay: 0.8, duration: 1 }} className="mt-16">
-          <img src={dividerImg} alt="Decorative divider" className="w-full max-w-lg mx-auto h-12 object-contain opacity-50" />
+          <div className="w-full max-w-lg mx-auto h-[1px] bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
         </motion.div>
       </div>
     </section>
