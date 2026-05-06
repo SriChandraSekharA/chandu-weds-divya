@@ -11,8 +11,16 @@ const FooterSection = () => {
 
   return (
     <section ref={ref} className="relative py-24 px-4 overflow-hidden">
-      <div className="absolute inset-0 flex items-center justify-center opacity-[0.03]">
-        <img src={mandalaImg} alt="" className="w-[500px] h-[500px] animate-spin-slow" />
+      <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+        <img
+          src={mandalaImg}
+          alt=""
+          className="w-[500px] h-[500px] max-w-[90vw] max-h-[90vw] animate-spin-slow rounded-full object-cover"
+          style={{
+            WebkitMaskImage: "radial-gradient(circle, black 55%, transparent 72%)",
+            maskImage: "radial-gradient(circle, black 55%, transparent 72%)",
+          }}
+        />
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto text-center">

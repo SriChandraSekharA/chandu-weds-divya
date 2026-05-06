@@ -18,7 +18,7 @@ const Index = () => {
         <LanguageToggle />
         <MusicToggle />
         <FixedGopurams />
-        <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+        <main className="h-screen overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth no-scrollbar">
           <SnapSection variant="fade"><HeroSection /></SnapSection>
           <SnapSection variant="slide"><CoupleSection /></SnapSection>
           <SnapSection variant="fade"><GopuramParallax /></SnapSection>
