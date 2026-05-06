@@ -8,22 +8,25 @@ import GopuramParallax from "@/components/wedding/GopuramParallax";
 import FixedGopurams from "@/components/wedding/FixedGopurams";
 import LanguageToggle from "@/components/wedding/LanguageToggle";
 import MusicToggle from "@/components/wedding/MusicToggle";
+import SnapSection from "@/components/wedding/SnapSection";
 import { LanguageProvider } from "@/components/wedding/LanguageContext";
 
 const Index = () => {
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-background overflow-x-hidden">
+      <div className="bg-background overflow-x-hidden">
         <LanguageToggle />
         <MusicToggle />
         <FixedGopurams />
-        <HeroSection />
-        <CoupleSection />
-        <GopuramParallax />
-        <CountdownSection />
-        <EventsSection />
-        <VenueSection />
-        <FooterSection />
+        <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+          <SnapSection variant="fade"><HeroSection /></SnapSection>
+          <SnapSection variant="slide"><CoupleSection /></SnapSection>
+          <SnapSection variant="fade"><GopuramParallax /></SnapSection>
+          <SnapSection variant="flip"><CountdownSection /></SnapSection>
+          <SnapSection variant="slide"><EventsSection /></SnapSection>
+          <SnapSection variant="flip"><VenueSection /></SnapSection>
+          <SnapSection variant="fade"><FooterSection /></SnapSection>
+        </main>
       </div>
     </LanguageProvider>
   );
