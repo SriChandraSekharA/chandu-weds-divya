@@ -31,12 +31,36 @@ const HeroSection = () => {
       ))}
 
       <motion.div style={{ opacity }} className="relative z-10 text-center px-4">
-        <motion.div style={{ rotate: mandalaRotate }} className="mx-auto mb-6 w-32 h-32 md:w-44 md:h-44 opacity-40">
-          <img src={mandalaImg} alt="Mandala decoration" className="w-full h-full object-contain" />
+        <motion.div
+          style={{ rotate: mandalaRotate }}
+          className="mx-auto mb-6 w-32 h-32 md:w-44 md:h-44 opacity-50 rounded-full overflow-hidden"
+        >
+          <img
+            src={mandalaImg}
+            alt="Mandala decoration"
+            className="w-full h-full object-cover rounded-full"
+            style={{
+              WebkitMaskImage: "radial-gradient(circle, black 60%, transparent 72%)",
+              maskImage: "radial-gradient(circle, black 60%, transparent 72%)",
+            }}
+          />
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2 }} className="mx-auto mb-4 w-24 h-24 md:w-32 md:h-32">
-          <img src={ganeshImg} alt="Lord Ganesh" className="w-full h-full object-contain" />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2 }}
+          className="mx-auto mb-4 w-40 h-40 md:w-56 md:h-56"
+        >
+          <img
+            src={ganeshImg}
+            alt="Lord Ganesh"
+            className="w-full h-full object-contain"
+            style={{
+              WebkitMaskImage: "radial-gradient(circle, black 55%, transparent 75%)",
+              maskImage: "radial-gradient(circle, black 55%, transparent 75%)",
+            }}
+          />
         </motion.div>
 
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.8 }}
