@@ -9,7 +9,7 @@ const FooterSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="relative py-24 px-4 overflow-hidden">
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center py-24 px-4 overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.07] pointer-events-none">
         <img
           src={mandalaImg}
@@ -22,7 +22,7 @@ const FooterSection = () => {
         />
       </div>
 
-      <div className="relative z-10 max-w-2xl mx-auto text-center">
+      <div className="relative z-10 max-w-2xl mx-auto text-center w-full">
         <motion.p initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.3, duration: 0.8 }}
           className="font-script text-3xl md:text-4xl text-gold-light mb-6">
           {t(lang, "footer.invite")}
