@@ -8,7 +8,7 @@ const CoupleSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="relative py-24 px-4 overflow-hidden">
+    <section ref={ref} className="relative min-h-screen flex items-center py-24 px-4 overflow-hidden">
       {/* Soft layered gradient background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-maroon/30 via-background to-background" />
@@ -16,7 +16,7 @@ const CoupleSection = () => {
         <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full bg-accent/10 blur-3xl" />
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-10 w-full">
         <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.8 }}
           className="text-center font-script text-2xl md:text-3xl text-gold-light mb-12">
           {t(lang, "couple.together")}
