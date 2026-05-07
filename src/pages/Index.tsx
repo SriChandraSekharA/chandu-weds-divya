@@ -9,6 +9,7 @@ import FixedGopurams from "@/components/wedding/FixedGopurams";
 import LanguageToggle from "@/components/wedding/LanguageToggle";
 import MusicToggle from "@/components/wedding/MusicToggle";
 import SnapSection from "@/components/wedding/SnapSection";
+import AmbientParticles from "@/components/wedding/AmbientParticles";
 import { LanguageProvider } from "@/components/wedding/LanguageContext";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
         <LanguageToggle />
         <MusicToggle />
         <FixedGopurams />
+        <AmbientParticles />
         <main className="h-screen overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth no-scrollbar">
           <SnapSection variant="fade"><HeroSection /></SnapSection>
           <SnapSection variant="slide"><CoupleSection /></SnapSection>
