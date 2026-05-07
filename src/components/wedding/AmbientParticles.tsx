@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useMemo } from "react";
 
-type ParticleType = "petal" | "marigold" | "diya";
+type ParticleType = "petal" | "marigold" | "hibiscus" | "jasmine" | "lotus";
 
 interface Particle {
   id: number;
@@ -72,59 +72,92 @@ const Marigold = ({ size }: { size: number }) => (
   </svg>
 );
 
-const Diya = ({ size }: { size: number }) => (
-  <svg width={size} height={size * 1.4} viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+const Hibiscus = ({ size }: { size: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <radialGradient id="flameGrad" cx="50%" cy="65%" r="50%">
-        <stop offset="0%" stopColor="hsl(50, 100%, 92%)" />
-        <stop offset="40%" stopColor="hsl(40, 100%, 70%)" />
-        <stop offset="80%" stopColor="hsl(25, 95%, 55%)" />
-        <stop offset="100%" stopColor="hsl(10, 85%, 45%)" stopOpacity="0.4" />
+      <radialGradient id="hibGrad" cx="50%" cy="60%" r="60%">
+        <stop offset="0%" stopColor="hsl(345, 90%, 80%)" />
+        <stop offset="60%" stopColor="hsl(350, 80%, 58%)" />
+        <stop offset="100%" stopColor="hsl(350, 75%, 40%)" />
       </radialGradient>
-      <linearGradient id="diyaBowl" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="hsl(28, 70%, 55%)" />
-        <stop offset="100%" stopColor="hsl(20, 65%, 30%)" />
-      </linearGradient>
     </defs>
-    {/* glow */}
-    <ellipse cx="12" cy="14" rx="10" ry="12" fill="url(#flameGrad)" opacity="0.35" />
-    {/* flame */}
-    <path
-      d="M12 4 C 14.5 9, 15 13, 12 18 C 9 13, 9.5 9, 12 4 Z"
-      fill="url(#flameGrad)"
-    />
-    <path
-      d="M12 8 C 13 11, 13 14, 12 17 C 11 14, 11 11, 12 8 Z"
-      fill="hsl(50, 100%, 88%)"
-      opacity="0.9"
-    />
-    {/* bowl */}
-    <path
-      d="M3 22 Q 12 32, 21 22 Q 18 26, 12 26 Q 6 26, 3 22 Z"
-      fill="url(#diyaBowl)"
-      stroke="hsl(35, 80%, 65%)"
-      strokeWidth="0.4"
-    />
-    <ellipse cx="12" cy="22" rx="9" ry="1.5" fill="hsl(35, 80%, 60%)" opacity="0.7" />
+    {[...Array(5)].map((_, i) => (
+      <path
+        key={i}
+        d="M12 12 C 8 8, 8 3, 12 2 C 16 3, 16 8, 12 12 Z"
+        fill="url(#hibGrad)"
+        opacity="0.9"
+        transform={`rotate(${i * 72} 12 12)`}
+      />
+    ))}
+    <circle cx="12" cy="12" r="1.6" fill="hsl(50, 95%, 65%)" />
+    <line x1="12" y1="12" x2="12" y2="20" stroke="hsl(45, 90%, 60%)" strokeWidth="0.6" />
+  </svg>
+);
+
+const Jasmine = ({ size }: { size: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="jasGrad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stopColor="hsl(45, 60%, 98%)" />
+        <stop offset="100%" stopColor="hsl(40, 40%, 86%)" />
+      </radialGradient>
+    </defs>
+    {[...Array(6)].map((_, i) => (
+      <ellipse
+        key={i}
+        cx="12"
+        cy="7"
+        rx="2"
+        ry="3.5"
+        fill="url(#jasGrad)"
+        opacity="0.95"
+        transform={`rotate(${i * 60} 12 12)`}
+      />
+    ))}
+    <circle cx="12" cy="12" r="1.2" fill="hsl(48, 85%, 70%)" />
+  </svg>
+);
+
+const Lotus = ({ size }: { size: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="lotusGrad" cx="50%" cy="60%" r="55%">
+        <stop offset="0%" stopColor="hsl(330, 85%, 88%)" />
+        <stop offset="100%" stopColor="hsl(330, 70%, 60%)" />
+      </radialGradient>
+    </defs>
+    {[...Array(8)].map((_, i) => (
+      <path
+        key={i}
+        d="M12 12 C 10.5 7, 10.5 3, 12 2 C 13.5 3, 13.5 7, 12 12 Z"
+        fill="url(#lotusGrad)"
+        opacity="0.85"
+        transform={`rotate(${i * 45} 12 12)`}
+      />
+    ))}
+    <circle cx="12" cy="12" r="1.4" fill="hsl(45, 90%, 70%)" />
   </svg>
 );
 
 const renderParticle = (type: ParticleType, size: number) => {
   if (type === "petal") return <RosePetal size={size} />;
   if (type === "marigold") return <Marigold size={size} />;
-  return <Diya size={size} />;
+  if (type === "hibiscus") return <Hibiscus size={size} />;
+  if (type === "jasmine") return <Jasmine size={size} />;
+  return <Lotus size={size} />;
 };
 
-const AmbientParticles = ({ count = 22 }: { count?: number }) => {
+const AmbientParticles = ({ count = 18 }: { count?: number }) => {
   const particles = useMemo<Particle[]>(() => {
-    const types: ParticleType[] = ["petal", "petal", "marigold", "marigold", "diya"];
+    const types: ParticleType[] = ["petal", "hibiscus", "marigold", "jasmine", "hibiscus", "lotus", "petal"];
     return Array.from({ length: count }, (_, i) => ({
       id: i,
       type: types[i % types.length],
       left: Math.random() * 100,
       delay: Math.random() * 15,
-      duration: 14 + Math.random() * 16,
-      size: 14 + Math.random() * 18,
+      duration: 22 + Math.random() * 22,
+      size: 12 + Math.random() * 14,
       drift: (Math.random() - 0.5) * 160,
       rotateFrom: Math.random() * 360,
       rotateTo: Math.random() * 720 - 360,
@@ -132,7 +165,7 @@ const AmbientParticles = ({ count = 22 }: { count?: number }) => {
   }, [count]);
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-[5] overflow-hidden" aria-hidden="true">
+    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
       {particles.map((p) => (
         <motion.div
           key={p.id}
@@ -143,7 +176,7 @@ const AmbientParticles = ({ count = 22 }: { count?: number }) => {
             y: ["-5vh", "105vh"],
             x: [0, p.drift * 0.5, p.drift, p.drift * 0.3, 0],
             rotate: [p.rotateFrom, p.rotateFrom + p.rotateTo],
-            opacity: [0, 0.85, 0.85, 0.7, 0],
+            opacity: [0, 0.25, 0.3, 0.2, 0],
           }}
           transition={{
             duration: p.duration,
@@ -155,7 +188,7 @@ const AmbientParticles = ({ count = 22 }: { count?: number }) => {
         >
           <div
             style={{
-              filter: p.type === "diya" ? "drop-shadow(0 0 8px hsl(40 100% 65% / 0.6))" : "drop-shadow(0 2px 4px hsl(0 0% 0% / 0.3))",
+              filter: "blur(0.4px) drop-shadow(0 1px 2px hsl(0 0% 0% / 0.2))",
             }}
           >
             {renderParticle(p.type, p.size)}
