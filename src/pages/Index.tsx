@@ -10,12 +10,14 @@ import LanguageToggle from "@/components/wedding/LanguageToggle";
 import MusicToggle from "@/components/wedding/MusicToggle";
 import SnapSection from "@/components/wedding/SnapSection";
 import AmbientParticles from "@/components/wedding/AmbientParticles";
+import CurtainIntro from "@/components/wedding/CurtainIntro";
 import { LanguageProvider } from "@/components/wedding/LanguageContext";
 
 const Index = () => {
   return (
     <LanguageProvider>
       <div className="bg-background overflow-x-hidden">
+        <CurtainIntro />
         <LanguageToggle />
         <MusicToggle />
         <FixedGopurams />
