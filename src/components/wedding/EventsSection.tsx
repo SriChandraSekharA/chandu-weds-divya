@@ -20,7 +20,7 @@ const EventCard = ({ title, date, time, venue, description, index }: EventCardPr
     <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.15 }}
       className="gold-border-ornate rounded-lg p-6 md:p-8 bg-card/80 backdrop-blur-sm">
-      <h3 className="font-display text-xl md:text-2xl gradient-gold-text mb-3">{title}</h3>
+      <h3 className="font-display text-xl md:text-2xl gradient-rose-gold-text mb-3">{title}</h3>
       <div className="space-y-2 font-body text-base">
         <p className="text-gold-light flex items-center gap-2 text-lg md:text-xl whitespace-pre-line">{date}</p>
         <p className="text-gold-light flex items-center gap-2 text-lg md:text-xl font-semibold"><span className="text-gold/60">🕐</span> {time}</p>
@@ -47,8 +47,8 @@ const EventsSection = () => {
 
       <div ref={ref} className="relative z-10 max-w-5xl mx-auto px-4">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center mb-16">
-          <p className="font-script text-2xl text-gold-light mb-2">{t(lang, "events.subtitle")}</p>
-          <h2 className="font-display text-3xl md:text-4xl gradient-gold-text mb-4">{t(lang, "events.title")}</h2>
+          <p className="font-script text-2xl gradient-rose-gold-text mb-2">{t(lang, "events.subtitle")}</p>
+          <h2 className="font-display text-3xl md:text-4xl gradient-rose-gold-text mb-4">{t(lang, "events.title")}</h2>
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto" />
         </motion.div>
 

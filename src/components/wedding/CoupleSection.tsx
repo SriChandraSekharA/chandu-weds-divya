@@ -18,14 +18,14 @@ const CoupleSection = () => {
 
       <div className="max-w-4xl mx-auto relative z-10 w-full">
         <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.8 }}
-          className="text-center font-script text-2xl md:text-3xl text-gold-light mb-12">
+          className="text-center font-script text-2xl md:text-3xl gradient-rose-gold-text mb-12">
           {t(lang, "couple.together")}
         </motion.p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
           <motion.div initial={{ opacity: 0, x: -60 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.2 }} className="text-center flex-1">
             <p className="font-body text-sm tracking-[0.3em] uppercase text-gold/60 mb-2">{t(lang, "couple.groom")}</p>
-            <h2 className="font-display md:text-4xl gradient-gold-text mb-3 text-2xl">{t(lang, "couple.groom_name")}</h2>
+            <h2 className="font-display md:text-4xl gradient-rose-gold-text mb-3 text-2xl">{t(lang, "couple.groom_name")}</h2>
             <p className="font-body text-lg text-gold-light/80 italic">{t(lang, "couple.son_of")}</p>
             <p className="font-body text-lg text-foreground">{t(lang, "couple.groom_father")}</p>
             <p className="font-body text-lg text-foreground">{t(lang, "couple.groom_mother")}</p>
@@ -41,7 +41,7 @@ const CoupleSection = () => {
 
           <motion.div initial={{ opacity: 0, x: 60 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.2 }} className="text-center flex-1">
             <p className="font-body text-sm tracking-[0.3em] uppercase text-gold/60 mb-2">{t(lang, "couple.bride")}</p>
-            <h2 className="font-display md:text-4xl gradient-gold-text mb-3 text-2xl">{t(lang, "couple.bride_name")}</h2>
+            <h2 className="font-display md:text-4xl gradient-rose-gold-text mb-3 text-2xl">{t(lang, "couple.bride_name")}</h2>
             <p className="font-body text-lg text-gold-light/80 italic">{t(lang, "couple.daughter_of")}</p>
             <p className="font-body text-lg text-foreground">{t(lang, "couple.bride_father")}</p>
             <p className="font-body text-lg text-foreground">{t(lang, "couple.bride_mother")}</p>
