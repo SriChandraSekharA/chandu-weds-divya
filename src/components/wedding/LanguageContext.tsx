@@ -61,7 +61,7 @@ export const t = (lang: Language, key: string): string => {
     "events.dinner": { en: "Dinner", te: "విందు భోజనం" },
     "events.dinner_desc": { en: "Grand dinner — your blessings and presence will make the occasion truly special", te: "ఘన విందు — మీ ఆశీర్వాదాలు మరియు ఉనికి ఈ సందర్భాన్ని ప్రత్యేకంగా చేస్తాయి" },
     "events.date_wedding": { en: "📅\nWednesday, 26th November 2026", te: "📅\nబుధవారం, 26 నవంబర్ 2026" },
-    "events.time_muhurtham": { en: "11:13 PM", te: "రాత్రి 11:13" },
+    "events.time_muhurtham": { en: "9:33 AM", te: "ఉదయం 9:33" },
     "events.time_dinner": { en: "7:00 PM Onwards", te: "సాయంత్రం 7:00 నుండి" },
     "events.venue_mandapam": { en: "\nTSIIC MULTIPURPOSE FUNCTION HALL, Hyderabad", te: "\nTSIIC మల్టీపర్పస్ ఫంక్షన్ హాల్, హైదరాబాద్" },
 

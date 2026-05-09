@@ -6,7 +6,7 @@ const CountdownSection = () => {
   const { lang } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const weddingDate = new Date("2026-04-29T23:13:00");
+  const weddingDate = new Date("2026-11-26T09:33:00");
 
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
