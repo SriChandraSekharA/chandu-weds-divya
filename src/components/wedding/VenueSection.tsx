@@ -20,14 +20,14 @@ const VenueSection = () => {
 
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center mb-16">
-          <p className="font-script text-2xl text-gold-light mb-2">{t(lang, "venue.subtitle")}</p>
-          <h2 className="font-display text-3xl md:text-4xl gradient-gold-text mb-4">{t(lang, "venue.title")}</h2>
+          <p className="font-script text-2xl gradient-rose-gold-text mb-2">{t(lang, "venue.subtitle")}</p>
+          <h2 className="font-display text-3xl md:text-4xl gradient-rose-gold-text mb-4">{t(lang, "venue.title")}</h2>
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto" />
         </motion.div>
 
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
           <motion.div initial={{ opacity: 0, x: -40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.2 }} className="flex-1 text-center md:text-left">
-            <h3 className="font-display text-2xl text-gold mb-4">{t(lang, "venue.name")}</h3>
+            <h3 className="font-display text-2xl gradient-rose-gold-text mb-4">{t(lang, "venue.name")}</h3>
             <div className="font-body text-lg space-y-2 text-foreground/80">
               <p>{t(lang, "venue.line1")}</p>
               <p>{t(lang, "venue.line2")}</p>

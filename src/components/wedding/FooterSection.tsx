@@ -24,7 +24,7 @@ const FooterSection = () => {
 
       <div className="relative z-10 max-w-2xl mx-auto text-center w-full">
         <motion.p initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.3, duration: 0.8 }}
-          className="font-script text-3xl md:text-4xl text-gold-light mb-6">
+          className="font-script text-3xl md:text-4xl gradient-rose-gold-text mb-6">
           {t(lang, "footer.invite")}
         </motion.p>
 
