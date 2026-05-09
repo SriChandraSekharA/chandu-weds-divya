@@ -38,7 +38,6 @@ const EventsSection = () => {
 
   const events = [
     { title: t(lang, "events.muhurtham"), date: t(lang, "events.date_wedding"), time: t(lang, "events.time_muhurtham"), venue: t(lang, "events.venue_mandapam"), description: t(lang, "events.muhurtham_desc") },
-    { title: t(lang, "events.dinner"), date: t(lang, "events.date_wedding"), time: t(lang, "events.time_dinner"), venue: t(lang, "events.venue_mandapam"), description: t(lang, "events.dinner_desc") },
   ];
 
   return (
@@ -53,7 +52,7 @@ const EventsSection = () => {
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 max-w-md mx-auto gap-6 md:gap-8">
           {events.map((event, index) => (
             <EventCard key={event.title} {...event} index={index} />
           ))}
