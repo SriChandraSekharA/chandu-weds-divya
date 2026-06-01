@@ -11,8 +11,14 @@ const SeethaKalyanaSection = () => {
   return (
     <section ref={ref} className="relative min-h-screen flex items-center py-24 px-4 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-maroon/20 to-background" />
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gold/10 blur-3xl" />
+        <img
+          src={seethaAsset.url}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-background/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent to-background/80" />
       </div>
 
       <div className="max-w-5xl mx-auto relative z-10 w-full text-center">
@@ -33,21 +39,6 @@ const SeethaKalyanaSection = () => {
         >
           {t(lang, "seetha.title")}
         </motion.h2>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="relative mx-auto rounded-2xl overflow-hidden shadow-gold border border-gold/30 max-w-3xl"
-        >
-          <img
-            src={seethaAsset.url}
-            alt="Seetha Kalyana Vaibhogame"
-            loading="lazy"
-            className="w-full h-auto object-cover"
-          />
-          <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-gold/20 rounded-2xl" />
-        </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}
