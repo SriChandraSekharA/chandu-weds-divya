@@ -1,5 +1,6 @@
 import HeroSection from "@/components/wedding/HeroSection";
 import CoupleSection from "@/components/wedding/CoupleSection";
+import SeethaKalyanaSection from "@/components/wedding/SeethaKalyanaSection";
 import CountdownSection from "@/components/wedding/CountdownSection";
 import EventsSection from "@/components/wedding/EventsSection";
 import VenueSection from "@/components/wedding/VenueSection";
@@ -26,6 +27,7 @@ const Index = () => {
           <SnapSection variant="fade"><HeroSection /></SnapSection>
           <SnapSection variant="slide"><CoupleSection /></SnapSection>
           <SnapSection variant="fade"><GopuramParallax /></SnapSection>
+          <SnapSection variant="fade"><SeethaKalyanaSection /></SnapSection>
           <SnapSection variant="flip"><CountdownSection /></SnapSection>
           <SnapSection variant="slide"><EventsSection /></SnapSection>
           <SnapSection variant="flip"><VenueSection /></SnapSection>
