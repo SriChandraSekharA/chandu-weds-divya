@@ -79,11 +79,6 @@ export const t = (lang: Language, key: string): string => {
     // Gopuram
     "gopuram.text": { en: "A Sacred Union Blessed by the Divine", te: "దైవ ఆశీర్వాదంతో పవిత్ర బంధం" },
 
-    // Seetha Kalyanam
-    "seetha.subtitle": { en: "Divine Blessings", te: "దైవ ఆశీర్వాదాలు" },
-    "seetha.title": { en: "Seetha Kalyana Vaibhogame", te: "సీతా కళ్యాణ వైభోగమే" },
-    "seetha.mantra": { en: "Rama Kalyana Vaibhogame", te: "రామ కళ్యాణ వైభోగమే" },
-
     // Footer
     "footer.invite": { en: "We joyfully invite you to share in our happiness", te: "మా ఆనందంలో పాలుపంచుకోమని మిమ్మల్ని ఆహ్వానిస్తున్నాము" },
     "footer.request": { en: "Your gracious presence and blessings are requested at the wedding ceremony of our beloved children.", te: "మా ప్రియమైన పిల్లల వివాహ వేడుకకు మీ శుభ ఉనికి మరియు ఆశీర్వాదాలు కోరుతున్నాము." },
