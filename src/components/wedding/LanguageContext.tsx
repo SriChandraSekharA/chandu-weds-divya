@@ -68,7 +68,7 @@ export const t = (lang: Language, key: string): string => {
     // Venue
     "venue.subtitle": { en: "Find Your Way", te: "మార్గం కనుగొనండి" },
     "venue.title": { en: "Wedding Venue", te: "వివాహ వేదిక" },
-    "venue.name": { en: "APR Praveen's Higheria Clubhouse", te: "APR ప్రవీణ్'స్ హైగేరియా క్లబ్‌హౌస్" },
+    "venue.name": { en: "Clubhouse", te: "క్లబ్‌హౌస్" },
     "venue.line1": { en: "APR Praveen's Higheria, Patancheru", te: "APR ప్రవీణ్'స్ హైగేరియా, పటాన్‌చెరు" },
     "venue.line2": { en: "Hyderabad, Telangana", te: "హైదరాబాద్, తెలంగాణ" },
     "venue.landmark": { en: "\n", te: "\n" },
