@@ -60,7 +60,7 @@ export const t = (lang: Language, key: string): string => {
     "events.muhurtham_desc": { en: "The sacred wedding ceremony performed with traditional Vedic rituals", te: "సంప్రదాయ వేద మంత్రాలతో పవిత్ర వివాహ వేడుక" },
     "events.dinner": { en: "Dinner", te: "విందు భోజనం" },
     "events.dinner_desc": { en: "Grand dinner — your blessings and presence will make the occasion truly special", te: "ఘన విందు — మీ ఆశీర్వాదాలు మరియు ఉనికి ఈ సందర్భాన్ని ప్రత్యేకంగా చేస్తాయి" },
-    "events.date_wedding": { en: "📅\nWednesday, 26th November 2026", te: "📅\nబుధవారం, 26 నవంబర్ 2026" },
+    "events.date_wedding": { en: "📅\nThursday, 26th November 2026", te: "📅\nగురువారం, 26 నవంబర్ 2026" },
     "events.time_muhurtham": { en: "9:33 AM", te: "ఉదయం 9:33" },
     "events.time_dinner": { en: "7:00 PM Onwards", te: "సాయంత్రం 7:00 నుండి" },
     "events.venue_mandapam": { en: "\nAPR Praveen's Higheria Clubhouse, Patancheru, Hyderabad", te: "\nAPR ప్రవీణ్'స్ హైగేరియా క్లబ్‌హౌస్, పటాన్‌చెరు, హైదరాబాద్" },
