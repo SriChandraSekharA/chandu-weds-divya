@@ -63,13 +63,13 @@ export const t = (lang: Language, key: string): string => {
     "events.date_wedding": { en: "📅\nWednesday, 26th November 2026", te: "📅\nబుధవారం, 26 నవంబర్ 2026" },
     "events.time_muhurtham": { en: "9:33 AM", te: "ఉదయం 9:33" },
     "events.time_dinner": { en: "7:00 PM Onwards", te: "సాయంత్రం 7:00 నుండి" },
-    "events.venue_mandapam": { en: "\nTSIIC MULTIPURPOSE FUNCTION HALL, Hyderabad", te: "\nTSIIC మల్టీపర్పస్ ఫంక్షన్ హాల్, హైదరాబాద్" },
+    "events.venue_mandapam": { en: "\nAPR Praveen's Higheria Clubhouse, Patancheru, Hyderabad", te: "\nAPR ప్రవీణ్'స్ హైగేరియా క్లబ్‌హౌస్, పటాన్‌చెరు, హైదరాబాద్" },
 
     // Venue
     "venue.subtitle": { en: "Find Your Way", te: "మార్గం కనుగొనండి" },
     "venue.title": { en: "Wedding Venue", te: "వివాహ వేదిక" },
-    "venue.name": { en: "TSIIC MULTIPURPOSE FUNCTION HALL", te: "TSIIC మల్టీపర్పస్ ఫంక్షన్ హాల్" },
-    "venue.line1": { en: "Rd Number 6, TSIIC Colony, Shapur Nagar", te: "రోడ్ నంబర్ 6, TSIIC కాలనీ, షాపూర్ నగర్" },
+    "venue.name": { en: "APR Praveen's Higheria Clubhouse", te: "APR ప్రవీణ్'స్ హైగేరియా క్లబ్‌హౌస్" },
+    "venue.line1": { en: "APR Praveen's Higheria, Patancheru", te: "APR ప్రవీణ్'స్ హైగేరియా, పటాన్‌చెరు" },
     "venue.line2": { en: "Hyderabad, Telangana", te: "హైదరాబాద్, తెలంగాణ" },
     "venue.landmark": { en: "\n", te: "\n" },
     "venue.maps": { en: "Open in Google Maps", te: "Google Maps లో చూడండి" },
