@@ -8,7 +8,7 @@ const CoupleSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center py-24 px-4 overflow-hidden">
+    <section ref={ref} className="relative min-h-[100dvh] flex items-center py-12 md:py-24 px-4 overflow-hidden">
       {/* Soft layered gradient background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-maroon/30 via-background to-background" />

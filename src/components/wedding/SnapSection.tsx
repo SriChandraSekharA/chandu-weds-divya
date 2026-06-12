@@ -36,14 +36,14 @@ const SnapSection = ({ children, variant = "fade", className = "" }: Props) => {
   return (
     <section
       ref={ref}
-      className={`snap-start snap-always min-h-screen w-full relative ${className}`}
+      className={`snap-start min-h-[100dvh] w-full relative ${className}`}
       style={{ perspective: 1200 }}
     >
       <motion.div
         variants={variants[variant]}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="w-full h-full min-h-screen"
+        className="w-full h-full min-h-[100dvh]"
         style={{ transformStyle: "preserve-3d" }}
       >
         {children}
