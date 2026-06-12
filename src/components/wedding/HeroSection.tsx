@@ -18,7 +18,7 @@ const HeroSection = () => {
   const mandalaRotate = useTransform(scrollYProgress, [0, 1], [0, 180]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
       <motion.div style={{ y, scale }} className="absolute inset-0 bg-gradient-to-b from-background via-maroon/20 to-background" />
       {[...Array(20)].map((_, i) => (
         <motion.div
