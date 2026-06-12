@@ -13,7 +13,7 @@ const VenueSection = () => {
   const googleMapsUrl = "https://maps.app.goo.gl/D2TayJ31JaWYVLkXA?g_st=ic";
 
   return (
-    <section ref={ref} className="relative py-24 px-4 overflow-hidden">
+    <section ref={ref} className="relative py-12 md:py-24 px-4 overflow-hidden">
       <motion.div style={{ y }} className="absolute top-0 right-0 w-64 h-64 opacity-5">
         <div className="w-full h-full rounded-full border-2 border-gold animate-spin-slow" />
       </motion.div>
