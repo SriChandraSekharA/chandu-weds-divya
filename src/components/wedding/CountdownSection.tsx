@@ -6,7 +6,7 @@ const CountdownSection = () => {
   const { lang } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const weddingDate = new Date("2026-04-29T23:13:00");
+  const weddingDate = new Date("2026-11-26T09:33:00");
 
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
@@ -33,14 +33,14 @@ const CountdownSection = () => {
   ];
 
   return (
-    <section ref={ref} className="relative py-20 px-4">
+    <section ref={ref} className="relative min-h-[100dvh] flex items-center justify-center py-12 md:py-20 px-4">
       <div className="absolute inset-0 bg-gradient-to-b from-maroon/20 via-maroon/10 to-transparent" />
       <div className="relative z-10 max-w-3xl mx-auto text-center">
-        <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} className="font-script text-2xl text-gold-light mb-2">
+        <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} className="font-script text-2xl gradient-rose-gold-text mb-2">
           {t(lang, "countdown.subtitle")}
         </motion.p>
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2 }}
-          className="font-display text-3xl md:text-4xl gradient-gold-text mb-12">
+          className="font-display text-3xl md:text-4xl gradient-rose-gold-text mb-12">
           {t(lang, "countdown.title")}
         </motion.h2>
 
@@ -50,7 +50,7 @@ const CountdownSection = () => {
               transition={{ delay: 0.3 + i * 0.1, duration: 0.6 }}
               className="gold-border-ornate rounded-lg p-3 md:p-6 min-w-[68px] md:min-w-[100px] bg-card/50 backdrop-blur-sm flex flex-col items-center justify-center text-center">
               <motion.span key={unit.value} initial={{ scale: 1.2, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
-                className="block font-display text-2xl md:text-4xl gradient-gold-text leading-none text-center w-full tabular-nums">
+                className="block font-display text-2xl md:text-4xl gradient-rose-gold-text leading-none text-center w-full tabular-nums">
                 {String(unit.value).padStart(2, "0")}
               </motion.span>
               <span className="font-body text-[10px] md:text-sm tracking-[0.15em] md:tracking-[0.2em] uppercase text-gold/60 mt-2 block text-center w-full">{unit.label}</span>

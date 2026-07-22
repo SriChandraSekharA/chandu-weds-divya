@@ -18,7 +18,7 @@ const HeroSection = () => {
   const mandalaRotate = useTransform(scrollYProgress, [0, 1], [0, 180]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
       <motion.div style={{ y, scale }} className="absolute inset-0 bg-gradient-to-b from-background via-maroon/20 to-background" />
       {[...Array(20)].map((_, i) => (
         <motion.div
@@ -64,7 +64,7 @@ const HeroSection = () => {
         </motion.div>
 
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.8 }}
-          className="font-body text-lg md:text-xl text-gold-light tracking-[0.3em] uppercase mb-2">
+          className="font-body text-lg md:text-xl gradient-rose-gold-text tracking-[0.3em] uppercase mb-2">
           {t(lang, "hero.blessing")}
         </motion.p>
 
@@ -72,12 +72,12 @@ const HeroSection = () => {
           className="w-40 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-8" />
 
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 1 }}
-          className="font-script text-2xl md:text-3xl text-gold-light mb-4">
+          className="font-script text-2xl md:text-3xl gradient-rose-gold-text mb-4">
           {t(lang, "hero.divine")}
         </motion.p>
 
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 1 }}
-          className="font-display text-4xl md:text-6xl lg:text-7xl gradient-gold-text mb-4 leading-tight">
+          className="font-display text-4xl md:text-6xl lg:text-7xl gradient-rose-gold-text mb-4 leading-tight">
           {t(lang, "hero.title")}
         </motion.h1>
 
