@@ -31,20 +31,18 @@ interface Props {
 
 const SnapSection = ({ children, variant = "fade", className = "" }: Props) => {
   const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { amount: 0.35, once: false });
+  const inView = useInView(ref, { amount: 0.2, once: true });
 
   return (
     <section
       ref={ref}
-      className={`snap-start min-h-[100dvh] w-full relative ${className}`}
-      style={{ perspective: 1200 }}
+      className={`snap-start snap-always h-[100dvh] w-full relative overflow-hidden ${className}`}
     >
       <motion.div
         variants={variants[variant]}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="w-full h-full min-h-[100dvh]"
-        style={{ transformStyle: "preserve-3d" }}
+        className="w-full h-full overflow-y-auto no-scrollbar"
       >
         {children}
       </motion.div>
