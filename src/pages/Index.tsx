@@ -11,13 +11,17 @@ import MusicToggle from "@/components/wedding/MusicToggle";
 import SnapSection from "@/components/wedding/SnapSection";
 import AmbientParticles from "@/components/wedding/AmbientParticles";
 import CurtainIntro from "@/components/wedding/CurtainIntro";
+import ScratchReveal from "@/components/wedding/ScratchReveal";
 import { LanguageProvider } from "@/components/wedding/LanguageContext";
+import { useState } from "react";
 
 const Index = () => {
+  const [phase, setPhase] = useState<"curtain" | "scratch" | "done">("curtain");
   return (
     <LanguageProvider>
       <div className="bg-background overflow-x-hidden">
-        <CurtainIntro />
+        {phase === "curtain" && <CurtainIntro onComplete={() => setPhase("scratch")} />}
+        {phase === "scratch" && <ScratchReveal onDone={() => setPhase("done")} />}
         <LanguageToggle />
         <MusicToggle />
         <FixedGopurams />
