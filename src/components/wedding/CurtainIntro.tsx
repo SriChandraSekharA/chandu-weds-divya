@@ -132,7 +132,7 @@ const CurtainScene = ({
   );
 };
 
-const CurtainIntro = () => {
+const CurtainIntro = ({ onComplete }: { onComplete?: () => void }) => {
   const [mounted, setMounted] = useState(true);
   const [fade, setFade] = useState(false);
   const progressRef = useRef({ value: 0 });
@@ -162,7 +162,10 @@ const CurtainIntro = () => {
 
     const fadeTimer = setTimeout(() => setFade(true), idleMs + openMs);
     const unmountTimer = setTimeout(
-      () => setMounted(false),
+      () => {
+        setMounted(false);
+        onComplete?.();
+      },
       idleMs + openMs + fadeMs + 50
     );
 
