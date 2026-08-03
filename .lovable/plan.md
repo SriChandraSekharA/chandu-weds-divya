@@ -1,42 +1,39 @@
-## Three.js Curtain Open Intro
+## Scratch-Card Date Reveal After Curtain
 
-A full-screen 3D curtain overlay covers the invitation on load. After ~1s, the two velvet panels part outward (left & right), then the overlay fades and unmounts so the Hero is revealed.
+Once the 3D curtain finishes opening, a non-dismissible overlay appears with a scratch card. The guest scratches the foil with finger or mouse; when enough is cleared, the wedding date is revealed and a Continue button takes them into the invitation.
 
-### Dependencies
-- Add `three@^0.160`, `@react-three/fiber@^8.18`, `@react-three/drei@^9.122`.
-  (Versions pinned to React 18 compatibility per project constraints.)
+### Flow
 
-### New file: `src/components/wedding/CurtainIntro.tsx`
-- React Three Fiber `<Canvas>` fixed full-screen, `z-[100]`, `pointer-events-none` after open.
-- Two `PlaneGeometry` panels (left & right), each with subtle vertical wave displacement to mimic fabric folds.
-- Custom `ShaderMaterial` (or `MeshStandardMaterial` + procedural stripes) for maroon velvet:
-  - Base color: maroon (`hsl(var(--maroon))` hex equivalent).
-  - Vertical fold shading via sine-based darkening.
-  - Gold trim strip along the inner edge of each panel (thin emissive gold band).
-  - Soft directional + ambient light for velvet sheen.
-- Animation (using `useFrame` + a progress ref, eased with `easeInOutCubic`):
-  - `t = 0 → 1.0s`: idle (curtain closed, slight idle sway).
-  - `t = 1.0s → 3.2s`: panels translate on X away from center (`-0` → `-1.2 * width`, and `+0` → `+1.2 * width`), with a tiny scale-x squash so folds compress as they pull.
-  - `t = 3.2s → 3.8s`: whole canvas fades opacity 1 → 0.
-  - `t > 3.8s`: component unmounts via `setMounted(false)`.
-- Optional gold tassel/rope decorations rendered as two thin meshes hanging at top edge.
-- Honors `prefers-reduced-motion`: skips wave/idle sway, shortens open to 0.6s.
+```text
+Curtain opens (existing) -> onComplete -> ScratchReveal overlay
+  (no close button, no ESC, no backdrop click)
+  -> guest scratches foil -> ~55 percent cleared -> foil auto-fades
+  -> date revealed with shimmer + Continue button -> overlay unmounts -> invitation
+```
 
-### Integration: `src/pages/Index.tsx`
-- Render `<CurtainIntro />` once, above all other content, inside `LanguageProvider`.
-- It self-manages mount/unmount; no other components change.
-- LanguageToggle / MusicToggle remain functional underneath because curtain layer is non-interactive after open and unmounts shortly after.
+### Changes
 
-### Performance / safety
-- Canvas uses `dpr={[1, 1.5]}`, `frameloop="always"` only while mounted; unmounts entirely after intro to free GPU.
-- Lazy-load via `React.lazy` + `Suspense` (fallback: a plain maroon div) so three.js doesn't block first paint.
-- Snap-scroll container is unaffected; curtain is a sibling overlay.
+1. `src/components/wedding/CurtainIntro.tsx`
+   - Accept an optional `onComplete` prop, fired when the intro unmounts at the end of the existing fade timeline. No change to curtain visuals or timing.
 
-### Visual spec
-- Color: maroon `#6B1A1A` base, deeper `#3E0D0D` in folds, gold trim `#D4AF37` (matches existing gold tokens).
-- 8–10 vertical folds per panel via shader sine.
-- Soft vignette at top edge for depth.
+2. New `src/components/wedding/ScratchReveal.tsx`
+   - Fixed full-screen overlay, `z-[110]`, dark blurred backdrop, interactive. Non-closable: no X, no ESC handler, no outside-click dismiss; page scroll locked while open.
+   - Card (about 320x420, rounded, existing `gold-border-ornate` styling) containing:
+     - Underneath: a script "Save the Date" line, `Thursday, 26th November 2026`, and `9:33 AM` Muhurtham time, all bilingual through `t(lang, ...)` and styled with `gradient-rose-gold-text`.
+     - On top: an HTML canvas filled with a rose-gold / indigo foil texture plus a "Scratch here" hint.
+   - Scratch mechanics: pointer events (mouse and touch) erase with `destination-out` compositing at roughly 28px radius, interpolated between points so fast drags leave no gaps. `touch-action: none` on the canvas so scratching never scrolls the page.
+   - Progress: sample canvas alpha about every 150ms; once roughly 55 percent is cleared, fade the canvas out and mark it revealed.
+   - Revealed state: framer-motion scale and fade on the date, plus a Continue / కొనసాగించు button that calls `onDone()`.
+   - Reduced-motion or no-canvas fallback: a "Tap to reveal" button that reveals instantly.
 
-### Out of scope
-- No audio trigger change (music still unlocks on first user interaction).
-- No changes to existing sections, language, or layout.
+3. `src/pages/Index.tsx`
+   - Local state `phase` with values `curtain`, `scratch`, `done`.
+   - `<CurtainIntro onComplete={...} />` moves the phase to `scratch`; `<ScratchReveal onDone={...} />` renders during that phase and moves it to `done`.
+   - Overlay sits above the language and music toggles; music still unlocks on the first scratch touch since that counts as a user gesture.
+
+4. `src/components/wedding/LanguageContext.tsx`
+   - Add keys `scratch.hint`, `scratch.savedate`, `scratch.continue`, `scratch.reveal` in English and Telugu. Date and time reuse the existing `events.date_wedding` and `events.time_muhurtham` values.
+
+### Notes
+- Frontend only; no backend or data changes.
+- Shown on every page load. Tell me if you would rather show it only once per visitor.
