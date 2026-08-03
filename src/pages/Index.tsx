@@ -26,9 +26,9 @@ const Index = () => {
           <SnapSection variant="fade"><HeroSection /></SnapSection>
           <SnapSection variant="slide"><CoupleSection /></SnapSection>
           <SnapSection variant="fade"><GopuramParallax /></SnapSection>
-          <SnapSection variant="flip"><CountdownSection /></SnapSection>
+          <SnapSection variant="fade"><CountdownSection /></SnapSection>
           <SnapSection variant="slide"><EventsSection /></SnapSection>
-          <SnapSection variant="flip"><VenueSection /></SnapSection>
+          <SnapSection variant="fade"><VenueSection /></SnapSection>
           <SnapSection variant="fade"><FooterSection /></SnapSection>
         </main>
       </div>
