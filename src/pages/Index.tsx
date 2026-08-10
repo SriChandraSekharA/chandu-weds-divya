@@ -12,8 +12,11 @@ import SnapSection from "@/components/wedding/SnapSection";
 import AmbientParticles from "@/components/wedding/AmbientParticles";
 import CurtainIntro from "@/components/wedding/CurtainIntro";
 import ScratchReveal from "@/components/wedding/ScratchReveal";
+import LoadingOverlay from "@/components/wedding/LoadingOverlay";
 import { LanguageProvider } from "@/components/wedding/LanguageContext";
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+
 
 const Index = () => {
   const [phase, setPhase] = useState<"curtain" | "scratch" | "done">("curtain");
