@@ -19,10 +19,15 @@ import { AnimatePresence } from "framer-motion";
 
 
 const Index = () => {
-  const [phase, setPhase] = useState<"curtain" | "scratch" | "done">("curtain");
+  const [phase, setPhase] = useState<"loading" | "curtain" | "scratch" | "done">("loading");
   return (
     <LanguageProvider>
       <div className="bg-background overflow-x-hidden">
+        <AnimatePresence>
+          {phase === "loading" && (
+            <LoadingOverlay onLoaded={() => setPhase("curtain")} />
+          )}
+        </AnimatePresence>
         {phase === "curtain" && <CurtainIntro onComplete={() => setPhase("scratch")} />}
         {phase === "scratch" && <ScratchReveal onDone={() => setPhase("done")} />}
         {phase !== "done" && (
