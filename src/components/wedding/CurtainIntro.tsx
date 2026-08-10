@@ -141,7 +141,7 @@ const CurtainIntro = ({ onComplete }: { onComplete?: () => void }) => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const idleMs = reduced ? 300 : 1600;
     const openMs = reduced ? 900 : 4200;
-    const fadeMs = 400;
+    const fadeMs = 500;
     const revealDelay = 100;
 
     let raf: number;
