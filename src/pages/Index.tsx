@@ -23,7 +23,7 @@ const Index = () => {
         {phase === "curtain" && <CurtainIntro onComplete={() => setPhase("scratch")} />}
         {phase === "scratch" && <ScratchReveal onDone={() => setPhase("done")} />}
         {phase !== "done" && (
-          <div className="fixed inset-0 z-[105] bg-background" aria-hidden="true" />
+          <div className="fixed inset-0 z-[95] bg-background" aria-hidden="true" />
         )}
         <div
           className={phase === "done" ? "" : "invisible"}
