@@ -22,19 +22,27 @@ const Index = () => {
       <div className="bg-background overflow-x-hidden">
         {phase === "curtain" && <CurtainIntro onComplete={() => setPhase("scratch")} />}
         {phase === "scratch" && <ScratchReveal onDone={() => setPhase("done")} />}
-        <LanguageToggle />
-        <MusicToggle />
-        <FixedGopurams />
-        <AmbientParticles />
-        <main className="h-[100dvh] overflow-y-auto overflow-x-hidden snap-y snap-mandatory no-scrollbar overscroll-y-contain">
+        {phase !== "done" && (
+          <div className="fixed inset-0 z-[105] bg-background" aria-hidden="true" />
+        )}
+        <div
+          className={phase === "done" ? "" : "invisible"}
+          aria-hidden={phase !== "done"}
+        >
+          <LanguageToggle />
+          <MusicToggle />
+          <FixedGopurams />
+          <AmbientParticles />
+          <main className="h-[100dvh] overflow-y-auto overflow-x-hidden snap-y snap-mandatory no-scrollbar overscroll-y-contain">
           <SnapSection variant="fade"><HeroSection /></SnapSection>
           <SnapSection variant="slide"><CoupleSection /></SnapSection>
           <SnapSection variant="fade"><GopuramParallax /></SnapSection>
           <SnapSection variant="fade"><CountdownSection /></SnapSection>
           <SnapSection variant="slide"><EventsSection /></SnapSection>
           <SnapSection variant="fade"><VenueSection /></SnapSection>
-          <SnapSection variant="fade"><FooterSection /></SnapSection>
-        </main>
+            <SnapSection variant="fade"><FooterSection /></SnapSection>
+          </main>
+        </div>
       </div>
     </LanguageProvider>
   );
