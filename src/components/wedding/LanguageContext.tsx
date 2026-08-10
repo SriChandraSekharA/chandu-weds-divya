@@ -77,10 +77,13 @@ export const t = (lang: Language, key: string): string => {
     "venue.camera": { en: "Point your camera at the QR code", te: "QR కోడ్ వైపు మీ కెమెరా చూపండి" },
 
     // Gopuram
+    "loading.text": { en: "Loading...", te: "లోడ్ అవుతోంది..." },
     "scratch.hint": { en: "Scratch to reveal", te: "గీసి చూడండి" },
+    "scratch.wedding_of": { en: "Wedding of", te: "వివాహం" },
     "scratch.savedate": { en: "Save the Date", te: "తేదీని గుర్తుంచుకోండి" },
     "scratch.continue": { en: "Continue", te: "కొనసాగించు" },
     "scratch.reveal": { en: "Tap to reveal", te: "చూడటానికి నొక్కండి" },
+
 
     "gopuram.text": { en: "A Sacred Union Blessed by the Divine", te: "దైవ ఆశీర్వాదంతో పవిత్ర బంధం" },
 

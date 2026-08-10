@@ -124,7 +124,7 @@ const ScratchReveal = ({ onDone }: { onDone: () => void }) => {
         {/* revealed content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
           <p className="font-script text-2xl gradient-rose-gold-text">
-            {t(lang, "scratch.savedate")}
+            {t(lang, "scratch.wedding_of")}
           </p>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -132,14 +132,11 @@ const ScratchReveal = ({ onDone }: { onDone: () => void }) => {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="flex flex-col items-center gap-3"
           >
-            <p className="font-display text-2xl gradient-rose-gold-text whitespace-pre-line leading-snug">
+            <p className="font-display text-2xl gradient-rose-gold-text">
+              {t(lang, "couple.groom_name")} & {t(lang, "couple.bride_name")}
+            </p>
+            <p className="font-display text-xl gradient-rose-gold-text whitespace-pre-line leading-snug">
               {t(lang, "events.date_wedding")}
-            </p>
-            <p className="font-body text-sm tracking-[0.2em] uppercase text-gold/70">
-              {t(lang, "events.muhurtham")}
-            </p>
-            <p className="font-display text-xl gradient-rose-gold-text">
-              {t(lang, "events.time_muhurtham")}
             </p>
             {revealed && (
               <button
