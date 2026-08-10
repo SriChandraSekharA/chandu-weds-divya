@@ -141,7 +141,8 @@ const CurtainIntro = ({ onComplete }: { onComplete?: () => void }) => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const idleMs = reduced ? 300 : 1600;
     const openMs = reduced ? 900 : 4200;
-    const fadeMs = 900;
+    const fadeMs = 400;
+    const revealDelay = 100;
 
     let raf: number;
     let start = 0;
@@ -161,17 +162,16 @@ const CurtainIntro = ({ onComplete }: { onComplete?: () => void }) => {
     raf = requestAnimationFrame(tick);
 
     const fadeTimer = setTimeout(() => setFade(true), idleMs + openMs);
+    const revealTimer = setTimeout(() => onComplete?.(), idleMs + openMs + revealDelay);
     const unmountTimer = setTimeout(
-      () => {
-        setMounted(false);
-        onComplete?.();
-      },
+      () => setMounted(false),
       idleMs + openMs + fadeMs + 50
     );
 
     return () => {
       cancelAnimationFrame(raf);
       clearTimeout(fadeTimer);
+      clearTimeout(revealTimer);
       clearTimeout(unmountTimer);
     };
   }, []);
