@@ -180,7 +180,7 @@ const CurtainIntro = ({ onComplete }: { onComplete?: () => void }) => {
 
   return (
     <div
-      className="fixed inset-0 z-[100] pointer-events-none transition-opacity duration-[400ms]"
+      className="fixed inset-0 z-[100] pointer-events-none transition-opacity duration-500"
       style={{ opacity: fade ? 0 : 1 }}
       aria-hidden="true"
     >
