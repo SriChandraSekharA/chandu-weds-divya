@@ -41,7 +41,7 @@ const EventsSection = () => {
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative min-h-[100dvh] flex items-center py-12 md:py-24 overflow-hidden">
       <div className="absolute inset-0 parallax-section opacity-15" style={{ backgroundImage: `url(${weddingBg})` }} />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
 

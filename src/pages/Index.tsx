@@ -41,7 +41,7 @@ const Index = () => {
           <MusicToggle />
           <FixedGopurams />
           <AmbientParticles />
-          <main className="mobile-snap-container h-[100dvh] overflow-y-scroll overflow-x-hidden snap-y snap-mandatory no-scrollbar">
+          <main className="overflow-x-hidden">
           <SnapSection variant="fade"><HeroSection /></SnapSection>
           <SnapSection variant="slide"><CoupleSection /></SnapSection>
           <SnapSection variant="fade"><GopuramParallax /></SnapSection>
