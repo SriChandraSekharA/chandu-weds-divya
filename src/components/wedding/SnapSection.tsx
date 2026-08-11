@@ -36,13 +36,13 @@ const SnapSection = ({ children, variant = "fade", className = "" }: Props) => {
   return (
     <section
       ref={ref}
-      className={`snap-start snap-always h-[100dvh] w-full shrink-0 relative overflow-hidden touch-pan-y ${className}`}
+      className={`w-full relative overflow-hidden ${className}`}
     >
       <motion.div
         variants={variants[variant]}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="w-full h-full"
+        className="w-full min-h-[100dvh]"
       >
         {children}
       </motion.div>
