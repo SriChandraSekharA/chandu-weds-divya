@@ -11,6 +11,7 @@ const VenueSection = () => {
   const y = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
   const googleMapsUrl = "https://maps.app.goo.gl/D2TayJ31JaWYVLkXA?g_st=ic";
+  const mapEmbedUrl = "https://maps.google.com/maps?q=17.5406364,78.2704928&z=15&output=embed";
 
   return (
     <section ref={ref} className="relative min-h-[100dvh] flex items-center py-12 md:py-24 px-4 overflow-hidden">
