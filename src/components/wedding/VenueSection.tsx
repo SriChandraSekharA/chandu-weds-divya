@@ -50,6 +50,18 @@ const VenueSection = () => {
             <p className="font-body text-xs text-muted-foreground mt-2 md:mt-3">{t(lang, "venue.camera")}</p>
           </motion.div>
         </div>
+
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.5 }} className="mt-10 md:mt-14 w-full">
+          <div className="gold-border-ornate rounded-xl overflow-hidden bg-card/60">
+            <iframe
+              src={mapEmbedUrl}
+              title="Venue map"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-48 md:h-72 border-0"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );
