@@ -8,7 +8,7 @@ const GopuramParallax = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center overflow-hidden">
+    <section className="relative h-[45vh] md:h-[60vh] flex items-center overflow-hidden">
       <motion.div style={{ x }} className="absolute inset-0 w-[120%]">
         <img src={gopuramPanorama} alt="Temple gopuram panorama" className="w-full h-full object-cover" />
       </motion.div>

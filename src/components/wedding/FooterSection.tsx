@@ -9,7 +9,7 @@ const FooterSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="relative min-h-[100dvh] flex items-center justify-center py-12 md:py-24 px-4 overflow-hidden">
+    <section ref={ref} className="relative min-h-[60vh] flex items-center justify-center py-12 md:py-24 px-4 overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.07] pointer-events-none">
         <img
           src={mandalaImg}
