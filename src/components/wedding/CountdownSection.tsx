@@ -33,7 +33,7 @@ const CountdownSection = () => {
   ];
 
   return (
-    <section ref={ref} className="relative min-h-[100dvh] flex items-center justify-center py-12 md:py-20 px-4">
+    <section ref={ref} className="relative min-h-[60vh] flex items-center justify-center py-12 md:py-20 px-4">
       <div className="absolute inset-0 bg-gradient-to-b from-maroon/20 via-maroon/10 to-transparent" />
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} className="font-script text-2xl gradient-rose-gold-text mb-2">

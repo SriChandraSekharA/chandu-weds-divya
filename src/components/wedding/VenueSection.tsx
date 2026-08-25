@@ -14,7 +14,7 @@ const VenueSection = () => {
   const mapEmbedUrl = "https://maps.google.com/maps?q=17.5406364,78.2704928&z=15&output=embed";
 
   return (
-    <section ref={ref} className="relative min-h-[100dvh] flex items-center py-12 md:py-24 px-4 overflow-hidden">
+    <section ref={ref} className="relative min-h-[60vh] flex items-center py-12 md:py-24 px-4 overflow-hidden">
       <motion.div style={{ y }} className="absolute top-0 right-0 w-64 h-64 opacity-5">
         <div className="w-full h-full rounded-full border-2 border-gold animate-spin-slow" />
       </motion.div>

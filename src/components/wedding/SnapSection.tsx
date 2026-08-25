@@ -42,7 +42,7 @@ const SnapSection = ({ children, variant = "fade", className = "" }: Props) => {
         variants={variants[variant]}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="w-full min-h-[100dvh]"
+        className="w-full"
       >
         {children}
       </motion.div>
