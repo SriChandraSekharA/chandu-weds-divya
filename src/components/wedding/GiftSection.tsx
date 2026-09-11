@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useLanguage, t } from "./LanguageContext";
 
-const AMAZON_GIFT_URL = "https://www.amazon.in/gp/gift-card";
+const AMAZON_GIFT_URL = "https://www.amazon.in/gift-card-store/b?ie=UTF8&node=3704982031";
 const AMAZON_EMAIL = "asrichandrasekhar@gmail.com";
 const CAUVERY_URL =
   "https://consciousplanet.org/en/cauvery-calling/campaigns/cauvery-calling-action-now-sri-chandra-sekhar-addepalli-0";
