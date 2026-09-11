@@ -11,9 +11,28 @@ const LanguageContext = createContext<LanguageContextType>({ lang: "en", toggle:
 
 export const useLanguage = () => useContext(LanguageContext);
 
+const getInitialLang = (): Language => {
+  if (typeof window === "undefined") return "en";
+  const param = new URLSearchParams(window.location.search).get("lang");
+  return param === "te" ? "te" : "en";
+};
+
+const setUrlLang = (lang: Language) => {
+  if (typeof window === "undefined") return;
+  const url = new URL(window.location.href);
+  if (lang === "te") url.searchParams.set("lang", "te");
+  else url.searchParams.delete("lang");
+  window.history.replaceState({}, "", url.toString());
+};
+
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLang] = useState<Language>("en");
-  const toggle = () => setLang((l) => (l === "en" ? "te" : "en"));
+  const [lang, setLang] = useState<Language>(getInitialLang);
+  const toggle = () =>
+    setLang((l) => {
+      const next = l === "en" ? "te" : "en";
+      setUrlLang(next);
+      return next;
+    });
   return (
     <LanguageContext.Provider value={{ lang, toggle }}>
       {children}
