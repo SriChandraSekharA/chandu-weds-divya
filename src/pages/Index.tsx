@@ -49,6 +49,7 @@ const Index = () => {
           <SnapSection variant="fade"><CountdownSection /></SnapSection>
           <SnapSection variant="slide"><EventsSection /></SnapSection>
           <SnapSection variant="fade"><VenueSection /></SnapSection>
+            <SnapSection variant="fade"><GiftSection /></SnapSection>
             <SnapSection variant="fade"><FooterSection /></SnapSection>
           </main>
         </div>
