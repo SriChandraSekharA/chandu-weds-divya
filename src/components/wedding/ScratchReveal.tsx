@@ -59,10 +59,22 @@ const ScratchReveal = ({ onDone }: { onDone: () => void }) => {
     }
     ctx.globalAlpha = 1;
 
-    ctx.fillStyle = "rgba(255,255,255,0.95)";
-    ctx.font = "700 16px system-ui, sans-serif";
     ctx.textAlign = "center";
-    ctx.fillText(t(lang, "scratch.hint"), CARD_W / 2, CARD_H / 2);
+    ctx.font = "700 20px system-ui, sans-serif";
+    const hint = t(lang, "scratch.hint");
+    // dark pill behind the text for guaranteed contrast on any foil color
+    ctx.fillStyle = "rgba(20,12,30,0.78)";
+    const metrics = ctx.measureText(hint);
+    const padX = 22, padY = 12;
+    const tw = metrics.width + padX * 2;
+    const th = 20 + padY * 2;
+    const bx = CARD_W / 2 - tw / 2;
+    const by = CARD_H / 2 - th / 2 + 2;
+    ctx.beginPath();
+    ctx.roundRect(bx, by, tw, th, 14);
+    ctx.fill();
+    ctx.fillStyle = "#fff";
+    ctx.fillText(hint, CARD_W / 2, CARD_H / 2 + 7);
   }, [lang]);
 
   const scratchAt = (x: number, y: number) => {
