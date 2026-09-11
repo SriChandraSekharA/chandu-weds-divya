@@ -3,6 +3,7 @@ import CoupleSection from "@/components/wedding/CoupleSection";
 import CountdownSection from "@/components/wedding/CountdownSection";
 import EventsSection from "@/components/wedding/EventsSection";
 import VenueSection from "@/components/wedding/VenueSection";
+import GiftSection from "@/components/wedding/GiftSection";
 import FooterSection from "@/components/wedding/FooterSection";
 import GopuramParallax from "@/components/wedding/GopuramParallax";
 import FixedGopurams from "@/components/wedding/FixedGopurams";
