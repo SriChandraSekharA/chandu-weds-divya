@@ -45,6 +45,9 @@ In `src/pages/Index.tsx`, add `import GiftSection` and render `<SnapSection vari
 ## Open item needing your input
 - **Amazon gift card recipient email**: I'll use a placeholder (`chandu@example.com`) in the build. Please share the real email so I can replace it, or tell me to remove the email display and rely only on the Amazon gift-card link.
 
+### 4. Scratch card hint text (small tweak)
+The scratch card already paints `scratch.hint` ("Scratch to reveal" / "గీసి చూడండి") on the foil. Verify it renders clearly on the foil; if it's too faint, increase the fill alpha or font weight so "Scratch to reveal" is obviously readable. This is a quick check/tweak in `ScratchReveal.tsx`, no structural change.
+
 ## Out of scope
 - No backend, no payment processing — both options are external links/emails only.
 - No changes to existing sections, fonts, colors, or layout heights.
