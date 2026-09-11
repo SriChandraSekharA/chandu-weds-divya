@@ -3,6 +3,7 @@ import CoupleSection from "@/components/wedding/CoupleSection";
 import CountdownSection from "@/components/wedding/CountdownSection";
 import EventsSection from "@/components/wedding/EventsSection";
 import VenueSection from "@/components/wedding/VenueSection";
+import GiftSection from "@/components/wedding/GiftSection";
 import FooterSection from "@/components/wedding/FooterSection";
 import GopuramParallax from "@/components/wedding/GopuramParallax";
 import FixedGopurams from "@/components/wedding/FixedGopurams";
@@ -48,6 +49,7 @@ const Index = () => {
           <SnapSection variant="fade"><CountdownSection /></SnapSection>
           <SnapSection variant="slide"><EventsSection /></SnapSection>
           <SnapSection variant="fade"><VenueSection /></SnapSection>
+            <SnapSection variant="fade"><GiftSection /></SnapSection>
             <SnapSection variant="fade"><FooterSection /></SnapSection>
           </main>
         </div>
