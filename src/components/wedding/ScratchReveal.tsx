@@ -59,8 +59,8 @@ const ScratchReveal = ({ onDone }: { onDone: () => void }) => {
     }
     ctx.globalAlpha = 1;
 
-    ctx.fillStyle = "rgba(255,255,255,0.85)";
-    ctx.font = "600 15px system-ui, sans-serif";
+    ctx.fillStyle = "rgba(255,255,255,0.95)";
+    ctx.font = "700 16px system-ui, sans-serif";
     ctx.textAlign = "center";
     ctx.fillText(t(lang, "scratch.hint"), CARD_W / 2, CARD_H / 2);
   }, [lang]);
