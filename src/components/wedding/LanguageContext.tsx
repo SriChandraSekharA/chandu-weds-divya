@@ -87,6 +87,17 @@ export const t = (lang: Language, key: string): string => {
 
     "gopuram.text": { en: "A Sacred Union Blessed by the Divine", te: "దైవ ఆశీర్వాదంతో పవిత్ర బంధం" },
 
+    // Gifts
+    "gift.subtitle": { en: "A Gesture of Love", te: "ప్రేమ కుశలం" },
+    "gift.title": { en: "Gift & Blessings", te: "బహుమానాలు & ఆశీర్వాదాలు" },
+    "gift.amazon_title": { en: "Amazon Gift Card", te: "అమెజాన్ గిఫ్ట్ కార్డ్" },
+    "gift.amazon_desc": { en: "Bless the couple with an Amazon e-gift card sent to their email.", te: "జంట దండికి అమెజాన్ ఇ-గిఫ్ట్ కార్డ్ పంపి ఆశీర్వదించండి." },
+    "gift.amazon_button": { en: "Send Gift Card", te: "గిఫ్ట్ కార్డ్ పంపండి" },
+    "gift.amazon_send_to": { en: "Send to", te: "పంపండి" },
+    "gift.cauvery_title": { en: "Cauvery Calling", te: "కావేరి కాలింగ్" },
+    "gift.cauvery_desc": { en: "Plant trees as a living gift through Sri Chandra Sekhar's Cauvery Calling campaign.", te: "శ్రీ చంద్ర శేఖర్ కావేరి కాలింగ్ క్యాంపెయిన్ ద్వారా చెట్లు నాటండి." },
+    "gift.cauvery_button": { en: "Plant a Tree", te: "చెట్లు నాటండి" },
+
     // Footer
     "footer.invite": { en: "We joyfully invite you to share in our happiness", te: "మా ఆనందంలో పాలుపంచుకోమని మిమ్మల్ని ఆహ్వానిస్తున్నాము" },
     "footer.request": { en: "Your gracious presence and blessings are requested at the wedding ceremony.", te: "వివాహ వేడుకకు మీ శుభ ఉనికి మరియు ఆశీర్వాదాలు కోరుతున్నాము." },
