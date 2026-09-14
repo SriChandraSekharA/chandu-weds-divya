@@ -113,9 +113,13 @@ export const t = (lang: Language, key: string): string => {
     "gift.amazon_desc": { en: "Bless the couple with an Amazon e-gift card sent to their email.", te: "జంట దండికి అమెజాన్ ఇ-గిఫ్ట్ కార్డ్ పంపి ఆశీర్వదించండి." },
     "gift.amazon_button": { en: "Send Gift Card", te: "గిఫ్ట్ కార్డ్ పంపండి" },
     "gift.amazon_send_to": { en: "Send to", te: "పంపండి" },
+    "gift.amazon_logo_alt": { en: "Amazon logo", te: "అమెజాన్ లోగో" },
+    "gift.preferred": { en: "Our Preferred Gift", te: "మా ప్రాధాన్య బహుమతి" },
     "gift.cauvery_title": { en: "Cauvery Calling", te: "కావేరి కాలింగ్" },
-    "gift.cauvery_desc": { en: "Plant trees as a living gift through Sri Chandra Sekhar's Cauvery Calling campaign.", te: "శ్రీ చంద్ర శేఖర్ కావేరి కాలింగ్ క్యాంపెయిన్ ద్వారా చెట్లు నాటండి." },
+    "gift.cauvery_price": { en: "Just ₹42 per tree", te: "ఒక్కో చెట్టుకు కేవలం ₹42" },
+    "gift.cauvery_desc": { en: "We would be especially grateful if you choose this living wedding gift and plant trees through Sri Chandra Sekhar's Cauvery Calling campaign.", te: "శ్రీ చంద్ర శేఖర్ కావేరి కాలింగ్ కార్యక్రమం ద్వారా చెట్లు నాటి, ఈ సజీవ వివాహ బహుమతిని ఎంచుకుంటే మేము ఎంతో ఆనందిస్తాము." },
     "gift.cauvery_button": { en: "Plant a Tree", te: "చెట్లు నాటండి" },
+    "gift.cauvery_logo_alt": { en: "Cauvery Calling logo", te: "కావేరి కాలింగ్ లోగో" },
 
     // Footer
     "footer.invite": { en: "We joyfully invite you to share in our happiness", te: "మా ఆనందంలో పాలుపంచుకోమని మిమ్మల్ని ఆహ్వానిస్తున్నాము" },
