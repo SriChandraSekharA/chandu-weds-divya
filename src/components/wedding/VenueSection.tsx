@@ -10,7 +10,7 @@ const VenueSection = () => {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
-  const googleMapsUrl = "https://maps.app.goo.gl/D2TayJ31JaWYVLkXA?g_st=ic";
+  const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=17.5406364%2C78.2704928";
   const mapEmbedUrl = "https://maps.google.com/maps?q=17.5406364,78.2704928&z=15&output=embed";
 
   return (
