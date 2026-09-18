@@ -11,7 +11,6 @@ const VenueSection = () => {
   const y = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
   const googleMapsUrl = "https://maps.app.goo.gl/D2TayJ31JaWYVLkXA";
-  const mapEmbedUrl = "https://maps.google.com/maps?q=17.5406364,78.2704928&z=15&output=embed";
 
   return (
     <section ref={ref} className="relative min-h-[60vh] flex items-center py-12 md:py-24 px-4 overflow-hidden">
@@ -51,17 +50,6 @@ const VenueSection = () => {
           </motion.div>
         </div>
 
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.5 }} className="mt-10 md:mt-14 w-full">
-          <div className="gold-border-ornate rounded-xl overflow-hidden bg-card/60">
-            <iframe
-              src={mapEmbedUrl}
-              title="Venue map"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-48 md:h-72 border-0"
-            />
-          </div>
-        </motion.div>
       </div>
     </section>
   );
