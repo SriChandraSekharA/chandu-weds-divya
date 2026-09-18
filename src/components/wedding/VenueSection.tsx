@@ -10,7 +10,7 @@ const VenueSection = () => {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
-  const googleMapsUrl = "https://maps.app.goo.gl/D2TayJ31JaWYVLkXA";
+  const googleMapsUrl = "https://maps.app.goo.gl/yDPy9RfJFbm628kW9";
 
   return (
     <section ref={ref} className="relative min-h-[60vh] flex items-center py-12 md:py-24 px-4 overflow-hidden">
