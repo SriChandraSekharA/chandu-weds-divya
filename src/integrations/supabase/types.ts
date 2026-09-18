@@ -14,7 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      gift_pledges: {
+        Row: {
+          created_at: string
+          gift_type: string
+          guest_name: string
+          id: string
+          message: string | null
+          tree_count: number | null
+        }
+        Insert: {
+          created_at?: string
+          gift_type: string
+          guest_name: string
+          id?: string
+          message?: string | null
+          tree_count?: number | null
+        }
+        Update: {
+          created_at?: string
+          gift_type?: string
+          guest_name?: string
+          id?: string
+          message?: string | null
+          tree_count?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
