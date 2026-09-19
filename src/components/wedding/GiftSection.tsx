@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { useLanguage, t } from "./LanguageContext";
 import amazonLogoAsset from "@/assets/amazon-logo.png.asset.json";
 import cauveryCallingLogoAsset from "@/assets/cauvery-calling-logo.png.asset.json";
@@ -95,6 +96,20 @@ const GiftSection = () => {
             </motion.a>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.7, delay: 0.45 }}
+          className="mt-8 text-center"
+        >
+          <Link
+            to={lang === "te" ? "/thank-you?lang=te" : "/thank-you"}
+            className="font-body text-sm uppercase tracking-[0.2em] text-gold hover:underline"
+          >
+            {t(lang, "gift.pledge_cta")}
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
