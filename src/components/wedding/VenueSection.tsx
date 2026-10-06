@@ -25,8 +25,28 @@ const VenueSection = () => {
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto" />
         </motion.div>
 
+        {/* Embedded Google Map */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-8 md:mb-12"
+        >
+          <div className="rounded-xl overflow-hidden border-2 border-gold/30 shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.3!2d78.2478!3d17.5289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbf1a1b7b7b7b7%3A0x0!2sAPR%20Praveen's%20Higheria%20Clubhouse!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              className="w-full h-[200px] md:h-[300px] lg:h-[350px]"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Wedding Venue - APR Praveen's Higheria Clubhouse"
+            />
+          </div>
+        </motion.div>
+
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          <motion.div initial={{ opacity: 0, x: -40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.2 }} className="flex-1 text-center md:text-left">
+          <motion.div initial={{ opacity: 0, x: -40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.3 }} className="flex-1 text-center md:text-left">
             <h3 className="font-display text-xl md:text-2xl gradient-rose-gold-text mb-4">{t(lang, "venue.name")}</h3>
             <div className="font-body text-base md:text-lg space-y-2 text-foreground/80">
               <p>{t(lang, "venue.line1")}</p>
@@ -39,7 +59,7 @@ const VenueSection = () => {
             </motion.a>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={isInView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.8, delay: 0.4 }}
+          <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={isInView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.8, delay: 0.5 }}
             className="gold-border-ornate rounded-xl p-4 md:p-6 bg-card/60 backdrop-blur-sm text-center">
             <p className="font-body text-xs md:text-sm tracking-[0.2em] uppercase text-gold/60 mb-3 md:mb-4">{t(lang, "venue.scan")}</p>
             <div className="bg-cream p-3 md:p-4 rounded-lg inline-block">
