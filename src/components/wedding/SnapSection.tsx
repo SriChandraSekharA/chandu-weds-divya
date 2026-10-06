@@ -27,15 +27,17 @@ interface Props {
   children: ReactNode;
   variant?: Variant;
   className?: string;
+  id?: string;
 }
 
-const SnapSection = ({ children, variant = "fade", className = "" }: Props) => {
+const SnapSection = ({ children, variant = "fade", className = "", id }: Props) => {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { amount: 0.2, once: true });
 
   return (
     <section
       ref={ref}
+      id={id}
       className={`w-full relative overflow-hidden ${className}`}
     >
       <motion.div
