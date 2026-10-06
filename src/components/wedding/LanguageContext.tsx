@@ -83,6 +83,7 @@ export const t = (lang: Language, key: string): string => {
     "events.time_muhurtham": { en: "9:33 AM", te: "ఉదయం 9:33" },
     "events.time_dinner": { en: "7:00 PM Onwards", te: "సాయంత్రం 7:00 నుండి" },
     "events.venue_mandapam": { en: "\nAPR Praveen's Higheria Clubhouse, Patancheru, Hyderabad", te: "\nAPR ప్రవీణ్'స్ హైగేరియా క్లబ్‌హౌస్, పటాన్‌చెరు, హైదరాబాద్" },
+    "events.add_calendar": { en: "Add to Calendar", te: "క్యాలెండర్‌కు జోడించండి" },
 
     // Venue
     "venue.subtitle": { en: "Find Your Way", te: "మార్గం కనుగొనండి" },
@@ -122,6 +123,8 @@ export const t = (lang: Language, key: string): string => {
     "gift.cauvery_logo_alt": { en: "Cauvery Calling logo", te: "కావేరి కాలింగ్ లోగో" },
 
     "gift.pledge_cta": { en: "I've sent my gift", te: "నా బహుమతి పంపాను" },
+    "gift.trees_planted": { en: "Trees Planted Together", te: "కలిసి నాటిన చెట్లు" },
+    "gift.trees_count": { en: "trees", te: "చెట్లు" },
 
     // Thank you page
     "thanks.subtitle": { en: "With Heartfelt Gratitude", te: "హృదయపూర్వక కృతజ్ఞతలతో" },
@@ -148,6 +151,7 @@ export const t = (lang: Language, key: string): string => {
     "thanks.wall_empty": { en: "No entries yet — be the first to share.", te: "ఇంకా ఎవరూ లేరు — మొదటివారు మీరే అవ్వండి." },
     "thanks.trees_label": { en: "trees", te: "చెట్లు" },
     "thanks.back": { en: "Back to Invitation", te: "శుభలేఖకు తిరిగి" },
+    "thanks.nav_button": { en: "Blessings", te: "ఆశీర్వాదాలు" },
 
     // Footer
     "footer.invite": { en: "We joyfully invite you to share in our happiness", te: "మా ఆనందంలో పాలుపంచుకోమని మిమ్మల్ని ఆహ్వానిస్తున్నాము" },
@@ -155,6 +159,9 @@ export const t = (lang: Language, key: string): string => {
     "footer.quote": { en: '"Two souls with but a single thought, two hearts that beat as one."', te: '"ఒకే ఆలోచనతో రెండు ఆత్మలు, ఒకటిగా కొట్టుకునే రెండు హృదయాలు."' },
     "footer.with": { en: "With Love & Blessings", te: "ప్రేమ & ఆశీర్వాదాలతో" },
     "footer.families": { en: "Both Families", te: "ఇరు కుటుంబాలు" },
+    "footer.share_whatsapp": { en: "Share on WhatsApp", te: "WhatsApp లో షేర్ చేయండి" },
+    "footer.copy_link": { en: "Copy Link", te: "లింక్ కాపీ చేయండి" },
+    "footer.link_copied": { en: "Link copied!", te: "లింక్ కాపీ అయింది!" },
   };
 
   return translations[key]?.[lang] ?? key;

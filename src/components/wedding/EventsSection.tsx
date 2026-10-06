@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useCallback } from "react";
+import { Calendar } from "lucide-react";
 import weddingBg from "@/assets/wedding-bg.jpg";
 import { useLanguage, t } from "./LanguageContext";
 
@@ -40,6 +41,44 @@ const EventsSection = () => {
     { title: t(lang, "events.muhurtham"), date: t(lang, "events.date_wedding"), time: t(lang, "events.time_muhurtham"), venue: t(lang, "events.venue_mandapam"), description: t(lang, "events.muhurtham_desc") },
   ];
 
+  const generateICS = useCallback(() => {
+    // Wedding event: November 26, 2026, 9:33 AM IST (UTC+5:30), duration 8 hours
+    const startDate = new Date(Date.UTC(2026, 10, 26, 4, 3, 0)); // 9:33 AM IST = 4:03 AM UTC
+    const endDate = new Date(Date.UTC(2026, 10, 26, 12, 3, 0)); // 5:33 PM IST = 12:03 PM UTC
+
+    const formatDate = (date: Date) =>
+      date.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+
+    const icsContent = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//Chandu Weds Divya//Wedding Invitation//EN",
+      "CALSCALE:GREGORIAN",
+      "METHOD:PUBLISH",
+      "BEGIN:VEVENT",
+      `DTSTART:${formatDate(startDate)}`,
+      `DTEND:${formatDate(endDate)}`,
+      `DTSTAMP:${formatDate(new Date())}`,
+      `UID:wedding-${Date.now()}@chanduwedsdivya.com`,
+      "SUMMARY:Wedding of Sri Chandra Sekhar & Divya Sri",
+      "DESCRIPTION:The sacred wedding ceremony of Sri Chandra Sekhar and Divya Sri. Your gracious presence and blessings are requested.",
+      "LOCATION:APR Praveen's Higheria Clubhouse\\, Patancheru\\, Hyderabad",
+      "STATUS:CONFIRMED",
+      "END:VEVENT",
+      "END:VCALENDAR",
+    ].join("\r\n");
+
+    const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "wedding-chandu-divya.ics";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }, []);
+
   return (
     <section className="relative min-h-[60vh] flex items-center py-12 md:py-24 overflow-hidden">
       <div className="absolute inset-0 parallax-section opacity-15" style={{ backgroundImage: `url(${weddingBg})` }} />
@@ -57,6 +96,21 @@ const EventsSection = () => {
             <EventCard key={event.title} {...event} index={index} />
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="flex justify-center mt-8"
+        >
+          <button
+            onClick={generateICS}
+            className="flex items-center gap-2 px-6 py-3 border border-gold/50 rounded-full text-gold-light hover:bg-gold/10 hover:border-gold transition-all duration-300 tracking-widest text-sm uppercase font-body"
+          >
+            <Calendar className="w-4 h-4" />
+            {t(lang, "events.add_calendar")}
+          </button>
+        </motion.div>
       </div>
     </section>
   );
