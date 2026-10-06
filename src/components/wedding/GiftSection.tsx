@@ -1,19 +1,70 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, animate } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage, t } from "./LanguageContext";
 import amazonLogoAsset from "@/assets/amazon-logo.png.asset.json";
 import cauveryCallingLogoAsset from "@/assets/cauvery-calling-logo.png.asset.json";
+import { supabase } from "@/integrations/supabase/client";
 
 const AMAZON_GIFT_URL = "https://www.amazon.in/gift-card-store/b?ie=UTF8&node=3704982031";
 const AMAZON_EMAIL = "asrichandrasekhar@gmail.com";
 const CAUVERY_URL =
   "https://consciousplanet.org/en/cauvery-calling/campaigns/cauvery-calling-action-now-sri-chandra-sekhar-addepalli-0";
 
+// Animated counter component using framer-motion
+const AnimatedCounter = ({ value, isInView }: { value: number; isInView: boolean }) => {
+  const [displayValue, setDisplayValue] = useState(0);
+  const nodeRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const controls = animate(0, value, {
+      duration: 2,
+      ease: "easeOut",
+      onUpdate: (latest) => {
+        setDisplayValue(Math.round(latest));
+      },
+    });
+
+    return () => controls.stop();
+  }, [value, isInView]);
+
+  return <span ref={nodeRef}>{displayValue.toLocaleString()}</span>;
+};
+
 const GiftSection = () => {
   const { lang } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [totalTrees, setTotalTrees] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Fetch total trees from Supabase
+  useEffect(() => {
+    const fetchTotalTrees = async () => {
+      try {
+        const { data, error } = await supabase
+          .from("gift_pledges")
+          .select("tree_count")
+          .eq("gift_type", "cauvery");
+
+        if (error) {
+          console.error("Error fetching tree count:", error);
+          return;
+        }
+
+        const total = data?.reduce((sum, row) => sum + (row.tree_count || 0), 0) || 0;
+        setTotalTrees(total);
+      } catch (err) {
+        console.error("Error fetching tree count:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchTotalTrees();
+  }, []);
 
   return (
     <section ref={ref} className="relative min-h-[60vh] flex items-center py-12 md:py-24 px-4 overflow-hidden">
@@ -28,6 +79,31 @@ const GiftSection = () => {
           <h2 className="font-display text-3xl md:text-4xl gradient-rose-gold-text mb-4">{t(lang, "gift.title")}</h2>
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto" />
         </motion.div>
+
+        {/* Animated Tree Counter Banner */}
+        {(totalTrees > 0 || !isLoading) && totalTrees > 0 && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-8 md:mb-10"
+          >
+            <div className="max-w-md mx-auto text-center py-4 px-6 rounded-full border border-gold/40 bg-gold/10 backdrop-blur-sm">
+              <div className="flex items-center justify-center gap-3">
+                <span className="text-2xl">🌳</span>
+                <div className="flex flex-col items-start">
+                  <span className="font-display text-2xl md:text-3xl text-gold">
+                    <AnimatedCounter value={totalTrees} isInView={isInView} />
+                  </span>
+                  <span className="font-body text-xs uppercase tracking-[0.15em] text-gold-light">
+                    {t(lang, "gift.trees_planted")}
+                  </span>
+                </div>
+                <span className="text-2xl">🌳</span>
+              </div>
+            </div>
+          </motion.div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-[1.12fr_0.88fr] gap-6 md:gap-8 max-w-4xl mx-auto items-stretch">
           {/* Cauvery Calling — preferred gift */}
