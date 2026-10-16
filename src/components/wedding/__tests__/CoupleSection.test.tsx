@@ -16,7 +16,7 @@ describe("CoupleSection", () => {
     expect(screen.getByText("Sri Chandra sekhar")).toBeInTheDocument();
     expect(screen.getByText("Divya Sri")).toBeInTheDocument();
     expect(screen.getByText("Younger Son of")).toBeInTheDocument();
-    expect(screen.getByText("Only Daughter of")).toBeInTheDocument();
+    expect(screen.getByText("Daughter of")).toBeInTheDocument();
     expect(screen.getByText("Sri. Venkata Ramana Murthy &")).toBeInTheDocument();
     expect(screen.getByText("Smt. Shashi Kala")).toBeInTheDocument();
     expect(screen.getByText("Sri. Karunakar &")).toBeInTheDocument();

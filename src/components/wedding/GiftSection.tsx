@@ -1,13 +1,12 @@
 import { motion, useInView, animate } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage, t } from "./LanguageContext";
 import amazonLogoAsset from "@/assets/amazon-logo.png.asset.json";
 import cauveryCallingLogoAsset from "@/assets/cauvery-calling-logo.png.asset.json";
-import { supabase } from "@/integrations/supabase/client";
 
-const AMAZON_GIFT_URL = "https://www.amazon.in/gift-card-store/b?ie=UTF8&node=3704982031";
-const AMAZON_EMAIL = "asrichandrasekhar@gmail.com";
+// const AMAZON_GIFT_URL = "https://www.amazon.in/gift-card-store/b?ie=UTF8&node=3704982031";
+// const AMAZON_EMAIL = "asrichandrasekhar@gmail.com";
 const CAUVERY_URL =
   "https://consciousplanet.org/en/cauvery-calling/campaigns/cauvery-calling-action-now-sri-chandra-sekhar-addepalli-0";
 
@@ -37,33 +36,11 @@ const GiftSection = () => {
   const { lang } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [totalTrees, setTotalTrees] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
 
-  // Fetch total trees from Supabase
+  // DB fetch removed - no database dependency
+
   useEffect(() => {
-    const fetchTotalTrees = async () => {
-      try {
-        const { data, error } = await supabase
-          .from("gift_pledges")
-          .select("tree_count")
-          .eq("gift_type", "cauvery");
-
-        if (error) {
-          console.error("Error fetching tree count:", error);
-          return;
-        }
-
-        const total = data?.reduce((sum, row) => sum + (row.tree_count || 0), 0) || 0;
-        setTotalTrees(total);
-      } catch (err) {
-        console.error("Error fetching tree count:", err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchTotalTrees();
+    // No-op: DB fetch removed
   }, []);
 
   return (
@@ -141,8 +118,22 @@ const GiftSection = () => {
             </motion.a>
           </motion.div>
 
-          {/* Amazon Gift Card — alternative */}
-          <motion.div
+          {/* View donations by others */}
+          <div className="mt-4 text-center">
+            <motion.a
+              href={CAUVERY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block px-6 md:px-8 py-3 border border-gold/70 rounded-full bg-gold/15 font-body text-sm uppercase tracking-[0.2em] text-gold hover:bg-gold/25 transition-colors"
+            >
+              {t(lang, "gift.view_donations_by_other")}
+            </motion.a>
+          </div>
+
+          {/* Amazon Gift Card — alternative (commented out) */}
+          {/* <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -170,7 +161,7 @@ const GiftSection = () => {
             >
               {t(lang, "gift.amazon_button")}
             </motion.a>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         <motion.div
