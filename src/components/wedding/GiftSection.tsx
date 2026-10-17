@@ -37,11 +37,9 @@ const GiftSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // DB fetch removed - no database dependency
-
-  useEffect(() => {
-    // No-op: DB fetch removed
-  }, []);
+  // DB fetch removed - no database dependency; banner hidden while totalTrees is 0
+  const totalTrees = 0;
+  const isLoading = false;
 
   return (
     <section ref={ref} className="relative min-h-[60vh] flex items-center py-12 md:py-24 px-4 overflow-hidden">
