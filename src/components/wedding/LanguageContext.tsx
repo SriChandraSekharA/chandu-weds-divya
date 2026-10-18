@@ -58,7 +58,7 @@ export const t = (lang: Language, key: string): string => {
     "couple.son_of": { en: "Younger Son of", te: "చిన్న కుమారుడు" },
     "couple.daughter_of": { en: "Daughter of", te: "కుమార్తె" },
     "couple.groom_father": { en: "Sri. Venkata Ramana Murthy &", te: "శ్రీ వెంకటరమణమూర్తి &" },
-    "couple.groom_mother": { en: "Smt. Shashi Kala", te: "శ్రీమతి శశికాల" },
+    "couple.groom_mother": { en: "Smt. Shashi Kala", te: "శ్రీమతి శశికళ" },
     "couple.bride_father": { en: "Sri. Karunakar &", te: "శ్రీకరుణాకర్ &" },
     "couple.bride_mother": { en: "Smt. Anantha Lakshmi", te: "శ్రీమతి అనంతలక్ష్మి" },
     "couple.groom_city": { en: "\n", te: "\n" },
