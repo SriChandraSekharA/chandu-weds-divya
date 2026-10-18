@@ -2,7 +2,9 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Volume2, VolumeX } from "lucide-react";
 
-const MUSIC_URL = "/nadaswaram.mp3";
+// Vite's BASE_URL is "/chandu-weds-divya/" in production and "/" in dev.
+// Prefixing keeps the public/ asset resolvable when the site is served from a sub-path.
+const MUSIC_URL = `${import.meta.env.BASE_URL}nadaswaram.mp3`;
 
 const MusicToggle = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);

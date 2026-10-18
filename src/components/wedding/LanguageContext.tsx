@@ -55,7 +55,7 @@ export const t = (lang: Language, key: string): string => {
     "couple.bride": { en: "The Bride", te: "వధువు" },
     "couple.groom_name": { en: "Sri Chandra sekhar", te: "శ్రీ చంద్ర శేఖర్" },
     "couple.bride_name": { en: "Divya Sri", te: "దివ్య శ్రీ" },
-    "couple.son_of": { en: "Younger Son of", te: "పెద్ద కుమారుడు" },
+    "couple.son_of": { en: "Younger Son of", te: "చిన్న కుమారుడు" },
     "couple.daughter_of": { en: "Daughter of", te: "కుమార్తె" },
     "couple.groom_father": { en: "Sri. Venkata Ramana Murthy &", te: "శ్రీ వెంకటరమణమూర్తి &" },
     "couple.groom_mother": { en: "Smt. Shashi Kala", te: "శ్రీమతి శశికాల" },
@@ -108,10 +108,10 @@ export const t = (lang: Language, key: string): string => {
     "gopuram.text": { en: "A Sacred Union Blessed by the Divine", te: "దైవ ఆశీర్వాదంతో పవిత్ర బంధం" },
 
     // Gifts
-    "gift.subtitle": { en: "A Gesture of Love", te: "ప్రేమ కుశలం" },
+    "gift.subtitle": { en: "A Gesture of Love", te: "ప్రేమ చిహ్నం" },
     "gift.title": { en: "Gift & Blessings", te: "బహుమానాలు & ఆశీర్వాదాలు" },
     "gift.amazon_title": { en: "Amazon Gift Card", te: "అమెజాన్ గిఫ్ట్ కార్డ్" },
-    "gift.amazon_desc": { en: "Bless the couple with an Amazon e-gift card sent to their email.", te: "జంట దండికి అమెజాన్ ఇ-గిఫ్ట్ కార్డ్ పంపి ఆశీర్వదించండి." },
+    "gift.amazon_desc": { en: "Bless the couple with an Amazon e-gift card sent to their email.", te: "జంటకు అమెజాన్ ఇ-గిఫ్ట్ కార్డ్‌ను వారి ఈమెయిల్‌కు పంపి ఆశీర్వదించండి." },
     "gift.amazon_button": { en: "Send Gift Card", te: "గిఫ్ట్ కార్డ్ పంపండి" },
     "gift.amazon_send_to": { en: "Send to", te: "పంపండి" },
     "gift.amazon_logo_alt": { en: "Amazon logo", te: "అమెజాన్ లోగో" },
