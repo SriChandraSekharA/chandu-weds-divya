@@ -32,7 +32,7 @@ const ThankYouContent = () => {
         </motion.div>
 
         <GiftPledgeForm onSaved={() => setRefreshKey((k) => k + 1)} />
-        <BlessingsWall refreshKey={refreshKey} />
+        {/* <BlessingsWall refreshKey={refreshKey} /> */}
 
         <div className="mt-12 text-center">
           <Link
