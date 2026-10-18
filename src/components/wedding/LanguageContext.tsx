@@ -121,7 +121,7 @@ export const t = (lang: Language, key: string): string => {
     "gift.cauvery_desc": { en: "We would be especially grateful if you choose this living wedding gift and plant trees through Sri Chandra Sekhar's Cauvery Calling campaign.", te: "శ్రీ చంద్ర శేఖర్ కావేరి కాలింగ్ కార్యక్రమం ద్వారా చెట్లు నాటి, ఈ సజీవ వివాహ బహుమతిని ఎంచుకుంటే మేము ఎంతో ఆనందిస్తాము." },
     "gift.cauvery_button": { en: "Plant a Tree", te: "చెట్లు నాటండి" },
     "gift.cauvery_logo_alt": { en: "Cauvery Calling logo", te: "కావేరి కాలింగ్ లోగో" },
-
+    "gift.view_donations_by_other": { en: "View All Donations", te: "అన్ని విరాళాలు చూడండి" },
     "gift.pledge_cta": { en: "I've sent my gift", te: "నా బహుమతి పంపాను" },
     "gift.trees_planted": { en: "Trees Planted Together", te: "కలిసి నాటిన చెట్లు" },
     "gift.trees_count": { en: "trees", te: "చెట్లు" },

@@ -6,7 +6,6 @@ import amazonLogoAsset from "@/assets/amazon-logo.png.asset.json";
 import cauveryCallingLogoAsset from "@/assets/cauvery-calling-logo.png.asset.json";
 
 // const AMAZON_GIFT_URL = "https://www.amazon.in/gift-card-store/b?ie=UTF8&node=3704982031";
-// const AMAZON_EMAIL = "asrichandrasekhar@gmail.com";
 const CAUVERY_URL =
   "https://consciousplanet.org/en/cauvery-calling/campaigns/cauvery-calling-action-now-sri-chandra-sekhar-addepalli-0";
 
@@ -116,20 +115,6 @@ const GiftSection = () => {
             </motion.a>
           </motion.div>
 
-          {/* View donations by others */}
-          <div className="mt-4 text-center">
-            <motion.a
-              href={CAUVERY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block px-6 md:px-8 py-3 border border-gold/70 rounded-full bg-gold/15 font-body text-sm uppercase tracking-[0.2em] text-gold hover:bg-gold/25 transition-colors"
-            >
-              {t(lang, "gift.view_donations_by_other")}
-            </motion.a>
-          </div>
-
           {/* Amazon Gift Card — alternative (commented out) */}
           {/* <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -160,6 +145,20 @@ const GiftSection = () => {
               {t(lang, "gift.amazon_button")}
             </motion.a>
           </motion.div> */}
+        </div>
+
+        {/* View donations by others — below the card */}
+        <div className="mt-6 text-center">
+          <motion.a
+            href={CAUVERY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block px-6 md:px-8 py-3 border border-gold/70 rounded-full bg-gold/15 font-body text-sm uppercase tracking-[0.2em] text-gold hover:bg-gold/25 transition-colors"
+          >
+            {t(lang, "gift.view_donations_by_other")}
+          </motion.a>
         </div>
 
         <motion.div
