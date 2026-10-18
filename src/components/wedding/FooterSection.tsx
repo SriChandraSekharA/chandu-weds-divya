@@ -10,14 +10,14 @@ const FooterSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [copied, setCopied] = useState(false);
 
-  const invitationUrl = typeof window !== "undefined" ? window.location.origin : "";
+  const invitationUrl =
+    typeof window !== "undefined"
+      ? `${window.location.origin}${import.meta.env.BASE_URL}`.replace(/\/$/, "")
+      : "";
   const whatsappMessage = encodeURIComponent(
     `You are invited to the wedding of Sri Chandra Sekhar & Divya Sri! 💒 ${invitationUrl}`
   );
-
-  const handleWhatsAppShare = () => {
-    window.open(`https://wa.me/?text=${whatsappMessage}`, "_blank");
-  };
+  const whatsappUrl = `https://wa.me/?text=${whatsappMessage}`;
 
   const handleCopyLink = async () => {
     try {
@@ -80,13 +80,15 @@ const FooterSection = () => {
           transition={{ delay: 1.2, duration: 0.8 }} 
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button
-            onClick={handleWhatsAppShare}
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold/20 to-gold/10 border border-gold/30 rounded-full text-gold hover:from-gold/30 hover:to-gold/20 transition-all duration-300 font-body text-sm"
           >
             <MessageCircle className="w-4 h-4" />
             {t(lang, "footer.share_whatsapp")}
-          </button>
+          </a>
 
           <button
             onClick={handleCopyLink}
