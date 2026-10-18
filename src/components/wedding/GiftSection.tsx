@@ -2,8 +2,8 @@ import { motion, useInView, animate } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage, t } from "./LanguageContext";
-import amazonLogoAsset from "@/assets/amazon-logo.png.asset.json";
-import cauveryCallingLogoAsset from "@/assets/cauvery-calling-logo.png.asset.json";
+import amazonLogo from "@/assets/amazon-logo.png";
+import cauveryCallingLogo from "@/assets/cauvery-calling-logo.png";
 
 // const AMAZON_GIFT_URL = "https://www.amazon.in/gift-card-store/b?ie=UTF8&node=3704982031";
 const CAUVERY_URL =
@@ -79,20 +79,20 @@ const GiftSection = () => {
           </motion.div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-[1.12fr_0.88fr] gap-6 md:gap-8 max-w-4xl mx-auto items-stretch">
+        <div className="flex justify-center max-w-4xl mx-auto">
           {/* Cauvery Calling — preferred gift */}
           <motion.div
             ref={ref}
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="gold-border-ornate rounded-lg p-6 md:p-8 bg-card/90 backdrop-blur-sm flex flex-col items-center text-center ring-1 ring-gold/40 shadow-lg"
+            className="gold-border-ornate rounded-lg p-6 md:p-8 bg-card/90 backdrop-blur-sm flex flex-col items-center text-center ring-1 ring-gold/40 shadow-lg w-full max-w-md"
           >
             <span className="mb-3 rounded-full border border-gold/50 bg-gold/10 px-4 py-1 font-body text-xs font-semibold uppercase tracking-[0.14em] text-gold">
               {t(lang, "gift.preferred")}
             </span>
             <img
-              src={cauveryCallingLogoAsset.url}
+              src={cauveryCallingLogo}
               alt={t(lang, "gift.cauvery_logo_alt")}
               className="h-20 w-20 rounded-full object-contain"
             />
@@ -123,7 +123,7 @@ const GiftSection = () => {
             className="gold-border-ornate rounded-lg p-6 md:p-8 bg-card/70 backdrop-blur-sm flex flex-col items-center text-center opacity-90"
           >
             <img
-              src={amazonLogoAsset.url}
+              src={amazonLogo}
               alt={t(lang, "gift.amazon_logo_alt")}
               className="h-14 w-32 object-contain"
             />
@@ -161,7 +161,7 @@ const GiftSection = () => {
           </motion.a>
         </div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.7, delay: 0.45 }}
@@ -173,7 +173,7 @@ const GiftSection = () => {
           >
             {t(lang, "gift.pledge_cta")}
           </Link>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

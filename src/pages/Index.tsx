@@ -13,7 +13,7 @@ import SnapSection from "@/components/wedding/SnapSection";
 import AmbientParticles from "@/components/wedding/AmbientParticles";
 import ScratchReveal from "@/components/wedding/ScratchReveal";
 import LoadingOverlay from "@/components/wedding/LoadingOverlay";
-import SectionNav from "@/components/wedding/SectionNav";
+// import SectionNav from "@/components/wedding/SectionNav";
 import { LanguageProvider } from "@/components/wedding/LanguageContext";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
@@ -39,7 +39,7 @@ const Index = () => {
         >
           <LanguageToggle />
           <MusicToggle />
-          <SectionNav />
+          {/* <SectionNav /> */}
           <FixedGopurams />
           <AmbientParticles />
           <main className="overflow-x-hidden">
