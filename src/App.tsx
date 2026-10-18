@@ -9,12 +9,17 @@ import ThankYou from "./pages/ThankYou.tsx";
 
 const queryClient = new QueryClient();
 
+// Vite's BASE_URL is "/chandu-weds-divya/" in production and "/" in dev.
+// React Router needs the same base (without a trailing slash) so the deployed
+// sub-path site resolves routes instead of falling through to the 404 catch-all.
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={routerBasename}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/thank-you" element={<ThankYou />} />
