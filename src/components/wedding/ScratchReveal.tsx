@@ -5,7 +5,7 @@ import { useLanguage, t } from "./LanguageContext";
 const CARD_W = 320;
 const CARD_H = 420;
 const RADIUS = 28;
-const THRESHOLD = 0.55;
+const THRESHOLD = 0.1;
 
 // Confetti particle type
 interface Confetti {
