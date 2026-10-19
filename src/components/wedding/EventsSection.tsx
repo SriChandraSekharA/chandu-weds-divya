@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useCallback } from "react";
-import { Calendar } from "lucide-react";
+import { useRef } from "react";
+// import { Calendar } from "lucide-react";
 import weddingBg from "@/assets/wedding-bg.jpg";
 import { useLanguage, t } from "./LanguageContext";
 
@@ -41,6 +41,7 @@ const EventsSection = () => {
     { title: t(lang, "events.muhurtham"), date: t(lang, "events.date_wedding"), time: t(lang, "events.time_muhurtham"), venue: t(lang, "events.venue_mandapam"), description: t(lang, "events.muhurtham_desc") },
   ];
 
+  /* Calendar integration removed — button hidden below.
   const generateICS = useCallback(() => {
     // Wedding event: November 26, 2026, 9:33 AM IST (UTC+5:30), duration 8 hours
     const startDate = new Date(Date.UTC(2026, 10, 26, 4, 3, 0)); // 9:33 AM IST = 4:03 AM UTC
@@ -78,6 +79,7 @@ const EventsSection = () => {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
   }, []);
+  */
 
   return (
     <section className="relative min-h-[60vh] flex items-center py-12 md:py-24 overflow-hidden">
@@ -97,6 +99,7 @@ const EventsSection = () => {
           ))}
         </div>
 
+        {/* Calendar button removed
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -111,6 +114,7 @@ const EventsSection = () => {
             {t(lang, "events.add_calendar")}
           </button>
         </motion.div>
+        */}
       </div>
     </section>
   );

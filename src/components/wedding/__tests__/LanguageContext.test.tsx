@@ -42,7 +42,7 @@ describe("LanguageContext", () => {
   });
 
   it("contains updated couple and event details", () => {
-    expect(t("en", "couple.son_of")).toBe("Younger Son of");
+    expect(t("en", "couple.son_of")).toBe("Youngest Son of");
     expect(t("en", "couple.groom_father")).toBe("Sri. Venkata Ramana Murthy &");
     expect(t("en", "couple.groom_mother")).toBe("Smt. Shashi Kala");
     expect(t("en", "couple.bride_father")).toBe("Sri. Karunakar &");

@@ -86,8 +86,8 @@ export const t = (lang: Language, key: string): string => {
     "events.add_calendar": { en: "Add to Calendar", te: "క్యాలెండర్‌కు జోడించండి" },
 
     // Venue
-    "venue.subtitle": { en: "Find Your Way", te: "మార్గం కనుగొనండి" },
-    "venue.title": { en: "Wedding Venue", te: "వివాహ వేదిక" },
+    "venue.subtitle": { en: "Find Your Way", te: "మీ బాట పట్టండి" },
+    "venue.title": { en: "Wedding Venue", te: "శుభ మండపం" },
     "venue.name": { en: "Clubhouse", te: "క్లబ్‌హౌస్" },
     "venue.line1": { en: "APR Praveen's Higheria, Patancheru", te: "APR ప్రవీణ్'స్ హైగేరియా, పటాన్‌చెరు" },
     "venue.line2": { en: "Hyderabad, Telangana", te: "హైదరాబాద్, తెలంగాణ" },
