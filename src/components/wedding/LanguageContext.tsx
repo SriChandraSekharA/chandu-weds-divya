@@ -65,8 +65,8 @@ export const t = (lang: Language, key: string): string => {
     "couple.bride_city": { en: "\n", te: "\n" },
 
     // Countdown
-    "countdown.subtitle": { en: "Counting Down To", te: "శుభ sumuhurtham వరకు" },
-    "countdown.title": { en: "The Big Day", te: "పెళ్ళి రోజు" },
+    "countdown.subtitle": { en: "Counting Down To", te: "Counting Down To" },
+    "countdown.title": { en: "The Big Day", te: "The Big Day" },
     "countdown.days": { en: "Days", te: "రోజులు" },
     "countdown.hours": { en: "Hours", te: "గంటలు" },
     "countdown.minutes": { en: "Minutes", te: "నిమిషాలు" },
