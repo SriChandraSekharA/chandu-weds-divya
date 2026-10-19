@@ -1,9 +1,9 @@
 import { motion, useInView, animate } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useLanguage, t } from "./LanguageContext";
-import amazonLogo from "@/assets/amazon-logo.png";
-import cauveryCallingLogo from "@/assets/cauvery-calling-logo.png";
+// import amazonLogo from "@/assets/amazon-logo.png";
+// import cauveryCallingLogo from "@/assets/cauvery-calling-logo.png";
 
 // const AMAZON_GIFT_URL = "https://www.amazon.in/gift-card-store/b?ie=UTF8&node=3704982031";
 const CAUVERY_URL =
@@ -79,6 +79,7 @@ const GiftSection = () => {
           </motion.div>
         )}
 
+        {/* Cauvery Calling gift section commented out — both English and Telugu.
         <div className="flex justify-center max-w-4xl mx-auto">
           {/* Cauvery Calling — preferred gift */}
           <motion.div
@@ -160,6 +161,7 @@ const GiftSection = () => {
             {t(lang, "gift.view_donations_by_other")}
           </motion.a>
         </div>
+        */}
 
         {/* <motion.div
           initial={{ opacity: 0 }}

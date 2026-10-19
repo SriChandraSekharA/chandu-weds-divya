@@ -1,0 +1,6 @@
+- generic [ref=f8e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic "Loading" [ref=f8e4]:
+    - paragraph [ref=f8e10]: Loading...

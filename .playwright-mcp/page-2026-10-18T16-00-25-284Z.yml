@@ -1,0 +1,9 @@
+- generic [ref=f10e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=f10e14]:
+    - paragraph [ref=f10e15]: Wedding of
+    - generic [ref=f10e16]:
+      - paragraph [ref=f10e17]: Sri Chandra sekhar & Divya Sri
+      - paragraph [ref=f10e18]: 📅 Thursday, 26th November 2026
