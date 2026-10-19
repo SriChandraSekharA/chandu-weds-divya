@@ -65,7 +65,7 @@ export const t = (lang: Language, key: string): string => {
     "couple.bride_city": { en: "\n", te: "\n" },
 
     // Countdown
-    "countdown.subtitle": { en: "Counting Down To", te: "శుభ ముహూర్తం వరకు" },
+    "countdown.subtitle": { en: "Counting Down To", te: "శుభ sumuhurtham వరకు" },
     "countdown.title": { en: "The Big Day", te: "పెళ్ళి రోజు" },
     "countdown.days": { en: "Days", te: "రోజులు" },
     "countdown.hours": { en: "Hours", te: "గంటలు" },
@@ -75,7 +75,7 @@ export const t = (lang: Language, key: string): string => {
     // Events
     "events.subtitle": { en: "Join us at the wedding and bless us", te: "వివాహానికి విచ్చేసి మమ్మల్ని ఆశీర్వదించగలరు" },
     "events.title": { en: "Wedding Events", te: "వివాహ కార్యక్రమాలు" },
-    "events.muhurtham": { en: "Muhurtham", te: "ముహూర్తం" },
+    "events.muhurtham": { en: "Muhurtham", te: "sumuhurtham" },
     "events.muhurtham_desc": { en: "The sacred wedding ceremony performed with traditional Vedic rituals", te: "సంప్రదాయ వేద మంత్రాలతో పవిత్ర వివాహ వేడుక" },
     "events.dinner": { en: "Dinner", te: "విందు భోజనం" },
     "events.dinner_desc": { en: "Grand dinner — your blessings and presence will make the occasion truly special", te: "ఘన విందు — మీ ఆశీర్వాదాలు మరియు ఉనికి ఈ సందర్భాన్ని ప్రత్యేకంగా చేస్తాయి" },
