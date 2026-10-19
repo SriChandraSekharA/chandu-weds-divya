@@ -73,7 +73,7 @@ export const t = (lang: Language, key: string): string => {
     "countdown.seconds": { en: "Seconds", te: "సెకన్లు" },
 
     // Events
-    "events.subtitle": { en: "Celebrate With Us", te: "మాతో కలిసి జరుపుకోండి" },
+    "events.subtitle": { en: "Join us at the wedding and bless us", te: "వివాహానికి విచ్చేసి మమ్మల్ని ఆశీర్వదించగలరు" },
     "events.title": { en: "Wedding Events", te: "వివాహ కార్యక్రమాలు" },
     "events.muhurtham": { en: "Muhurtham", te: "ముహూర్తం" },
     "events.muhurtham_desc": { en: "The sacred wedding ceremony performed with traditional Vedic rituals", te: "సంప్రదాయ వేద మంత్రాలతో పవిత్ర వివాహ వేడుక" },
