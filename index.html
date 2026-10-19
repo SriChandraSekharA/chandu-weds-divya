@@ -9,6 +9,7 @@
 
     <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#d4af37">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Wedding">
@@ -30,6 +31,39 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.ico">
+
+    <!--
+      Self-heal for GitHub Pages. index.html is served with `cache-control: max-age=600`
+      while every deploy replaces the hashed files in /assets. A visitor whose browser
+      holds a cached index.html will request a bundle hash that no longer exists (404)
+      and see a blank page. If a script or stylesheet fails to load, force ONE
+      cache-busting reload per session so the stale HTML recovers on its own.
+    -->
+    <script>
+      (function () {
+        var KEY = "spa-asset-recovered";
+        window.addEventListener(
+          "error",
+          function (event) {
+            var el = event.target;
+            if (!el || el === window || el === document) return;
+            var tag = el.tagName;
+            if (tag !== "SCRIPT" && tag !== "LINK") return;
+            try {
+              if (sessionStorage.getItem(KEY)) return;
+              sessionStorage.setItem(KEY, "1");
+            } catch (err) {
+              // sessionStorage unavailable: fall back to a marker in the URL
+              if (location.search.indexOf("_cb=") !== -1) return;
+            }
+            var url = new URL(location.href);
+            url.searchParams.set("_cb", String(Date.now()));
+            location.replace(url.toString());
+          },
+          true
+        );
+      })();
+    </script>
 </head>
 
   <body>
