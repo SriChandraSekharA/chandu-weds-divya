@@ -1,13 +1,6 @@
 import { motion, useInView, animate } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
 import { useLanguage, t } from "./LanguageContext";
-// import amazonLogo from "@/assets/amazon-logo.png";
-// import cauveryCallingLogo from "@/assets/cauvery-calling-logo.png";
-
-// const AMAZON_GIFT_URL = "https://www.amazon.in/gift-card-store/b?ie=UTF8&node=3704982031";
-const CAUVERY_URL =
-  "https://consciousplanet.org/en/cauvery-calling/campaigns/cauvery-calling-action-now-sri-chandra-sekhar-addepalli-0";
 
 // Animated counter component using framer-motion
 const AnimatedCounter = ({ value, isInView }: { value: number; isInView: boolean }) => {
@@ -79,103 +72,8 @@ const GiftSection = () => {
           </motion.div>
         )}
 
-        {/* Cauvery Calling gift section commented out — both English and Telugu.
-        <div className="flex justify-center max-w-4xl mx-auto">
-          {/* Cauvery Calling — preferred gift */}
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="gold-border-ornate rounded-lg p-6 md:p-8 bg-card/90 backdrop-blur-sm flex flex-col items-center text-center ring-1 ring-gold/40 shadow-lg w-full max-w-md"
-          >
-            <span className="mb-3 rounded-full border border-gold/50 bg-gold/10 px-4 py-1 font-body text-xs font-semibold uppercase tracking-[0.14em] text-gold">
-              {t(lang, "gift.preferred")}
-            </span>
-            <img
-              src={cauveryCallingLogo}
-              alt={t(lang, "gift.cauvery_logo_alt")}
-              className="h-20 w-20 rounded-full object-contain"
-            />
-            <h3 className="font-display text-xl md:text-2xl gradient-rose-gold-text mb-3 mt-3">
-              {t(lang, "gift.cauvery_title")}
-            </h3>
-            <p className="font-display text-2xl gradient-rose-gold-text mb-3">
-              {t(lang, "gift.cauvery_price")}
-            </p>
-            <p className="font-body text-base text-muted-foreground italic mb-6">{t(lang, "gift.cauvery_desc")}</p>
-            <motion.a
-              href={CAUVERY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-auto inline-block px-6 md:px-8 py-3 border border-gold/70 rounded-full bg-gold/15 font-body text-sm tracking-[0.2em] uppercase text-gold hover:bg-gold/25 transition-colors"
-            >
-              {t(lang, "gift.cauvery_button")}
-            </motion.a>
-          </motion.div>
-
-          {/* Amazon Gift Card — alternative (commented out) */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="gold-border-ornate rounded-lg p-6 md:p-8 bg-card/70 backdrop-blur-sm flex flex-col items-center text-center opacity-90"
-          >
-            <img
-              src={amazonLogo}
-              alt={t(lang, "gift.amazon_logo_alt")}
-              className="h-14 w-32 object-contain"
-            />
-            <h3 className="font-display text-xl md:text-2xl gradient-rose-gold-text mb-3 mt-3">
-              {t(lang, "gift.amazon_title")}
-            </h3>
-            <p className="font-body text-base text-muted-foreground italic mb-4">{t(lang, "gift.amazon_desc")}</p>
-            <p className="font-body text-sm text-gold-light mb-6 break-all">
-              {t(lang, "gift.amazon_send_to")}: <span className="text-gold">{AMAZON_EMAIL}</span>
-            </p>
-            <motion.a
-              href={AMAZON_GIFT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-auto inline-block px-6 md:px-8 py-3 border border-gold/50 rounded-full font-body text-sm tracking-[0.2em] uppercase text-gold hover:bg-gold/10 transition-colors"
-            >
-              {t(lang, "gift.amazon_button")}
-            </motion.a>
-          </motion.div> */}
-        </div>
-
-        {/* View donations by others — below the card */}
-        <div className="mt-6 text-center">
-          <motion.a
-            href={CAUVERY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block px-6 md:px-8 py-3 border border-gold/70 rounded-full bg-gold/15 font-body text-sm uppercase tracking-[0.2em] text-gold hover:bg-gold/25 transition-colors"
-          >
-            {t(lang, "gift.view_donations_by_other")}
-          </motion.a>
-        </div>
-        */}
-
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="mt-8 text-center"
-        >
-          <Link
-            to={lang === "te" ? "/thank-you?lang=te" : "/thank-you"}
-            className="font-body text-sm uppercase tracking-[0.2em] text-gold hover:underline"
-          >
-            {t(lang, "gift.pledge_cta")}
-          </Link>
-        </motion.div> */}
+        {/* Cauvery Calling / Amazon gift cards and donation links intentionally
+            commented out (EN + TE) — recoverable from git history (19683fe). */}
       </div>
     </section>
   );
