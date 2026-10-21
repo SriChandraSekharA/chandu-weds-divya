@@ -12,6 +12,10 @@ Chandu weds Divya — a wedding invitation demo site with South Indian temple ae
 - **Backend**: Supabase (blessings wall, gift pledges)
 - **Testing**: Vitest (unit) + Playwright (e2e)
 
+## Deployment Paths
+
+- Build production assets with relative URLs and select the router basename from the current URL, so one build works at the Lovable domain root, GitHub Pages subpath, and local folders.
+
 ## Commands
 
 ```bash

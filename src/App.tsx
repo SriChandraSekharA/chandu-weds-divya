@@ -9,10 +9,14 @@ import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
 
-// Vite's BASE_URL is "/chandu-weds-divya/" in production and "/" in dev.
-// React Router needs the same base (without a trailing slash) so the deployed
-// sub-path site resolves routes instead of falling through to the 404 catch-all.
-const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
+// The app is hosted at the domain root on Lovable and under this path on
+// GitHub Pages. Keep routing aligned with the URL without baking either host
+// into the production asset paths.
+const githubPagesPath = "/chandu-weds-divya";
+const isGitHubPagesPath =
+  window.location.pathname === githubPagesPath ||
+  window.location.pathname.startsWith(`${githubPagesPath}/`);
+const routerBasename = isGitHubPagesPath ? githubPagesPath : "/";
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
