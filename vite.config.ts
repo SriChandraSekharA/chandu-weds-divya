@@ -18,5 +18,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: mode === "production" ? "/chandu-weds-divya/" : "/",
+  // Relative production URLs let the same build run at the site root, on
+  // GitHub Pages under /chandu-weds-divya/, and from a local folder.
+  base: mode === "production" ? "./" : "/",
 }));
